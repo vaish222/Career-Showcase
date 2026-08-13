@@ -7,11 +7,11 @@ export const personal = {
   title: "Senior Software Engineer → Product Manager",
   tagline:
     "I build software and now I ship products — bridging engineering depth with product intuition to turn complex problems into things people actually love.",
-  email: "alex.rivera@example.com",
-  github: "https://github.com/alexrivera",
+  email: "vaishali221@gmail.com",
+  github: "https://github.com/vaish222",
   linkedin: "https://www.linkedin.com/in/vaishaligoel221/",
   resumeUrl: "/resume.pdf", // Replace with your actual resume file path
-  location: "San Francisco, CA",
+  location: "San Francisco Bay Area",
   bio: `I'm a Senior Software Engineer with 8+ years of experience building scalable systems at companies ranging from early-stage startups to Fortune 500s. After years of shipping code and watching products succeed (and fail), I've developed a deep intuition for what makes products great — and I'm now channeling that into a full transition to Product Management.
 
 My engineering background means I ask the right questions, understand technical tradeoffs, and earn the trust of the teams I work with. My product instincts come from years of sitting in discovery calls, reading metrics, and caring deeply about why features exist — not just how they're built.
