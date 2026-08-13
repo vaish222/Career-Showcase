@@ -3,13 +3,13 @@
 // ============================================================
 
 export const personal = {
-  name: "Alex Rivera",
+  name: "Vaishali Goel",
   title: "Senior Software Engineer → Product Manager",
   tagline:
     "I build software and now I ship products — bridging engineering depth with product intuition to turn complex problems into things people actually love.",
   email: "alex.rivera@example.com",
   github: "https://github.com/alexrivera",
-  linkedin: "https://linkedin.com/in/alexrivera",
+  linkedin: "https://www.linkedin.com/in/vaishaligoel221/",
   resumeUrl: "/resume.pdf", // Replace with your actual resume file path
   location: "San Francisco, CA",
   bio: `I'm a Senior Software Engineer with 8+ years of experience building scalable systems at companies ranging from early-stage startups to Fortune 500s. After years of shipping code and watching products succeed (and fail), I've developed a deep intuition for what makes products great — and I'm now channeling that into a full transition to Product Management.

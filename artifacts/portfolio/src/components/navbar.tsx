@@ -69,7 +69,7 @@ export function Navbar() {
           }}
           className="text-lg font-bold tracking-tight text-foreground"
         >
-          AR.
+          VG.
         </a>
 
         {/* Desktop Nav */}
