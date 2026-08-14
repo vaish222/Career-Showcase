@@ -13,7 +13,7 @@ export const personal = {
   resumeUrl: "/resume.pdf", // TODO: upload your resume PDF and update this path
   photo: "/photo.jpg", // TODO: upload your headshot to artifacts/portfolio/public/photo.jpg
   location: "San Francisco Bay Area",
-  availabilityTags: ["Open to PM roles", "Open to relocation / remote"],
+  availabilityTags: ["Open to PM roles"],
   stats: [
     { value: "15+", label: "years engineering" },
     { value: "6", label: "enterprise products shipped" },
@@ -191,7 +191,7 @@ export const education = [
   {
     institution: "Certifications & AI Credentials",
     degree: "FWA AI Hackathon Winner · Google 5-Day AI Agents Intensive · Machine Learning Specialization (DeepLearning.AI)",
-    period: "2023–2024",
+    period: "",
     notes: "Also: Claude Code in Action · RAG with LangChain · AWS AI Practitioner · Introduction to MCP · Sun Certified Java Programmer (SCJP)",
   },
 ];
