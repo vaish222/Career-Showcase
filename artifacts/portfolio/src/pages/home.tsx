@@ -211,10 +211,10 @@ export default function Home() {
                 >
                   <div>
                     <div className="flex items-start justify-between mb-4">
-                      <h4 className="text-xl font-bold text-card-foreground group-hover:text-primary transition-colors">
+                      <h4 className="text-xl font-bold text-foreground">
                         {project.title}
                       </h4>
-                      {project.link && <ArrowUpRight className="text-muted-foreground group-hover:text-primary transition-colors" size={20} />}
+                      {project.link && <ArrowUpRight className="text-muted-foreground group-hover:text-primary transition-colors shrink-0 mt-0.5" size={20} />}
                     </div>
                     <div className="mb-6">
                       <span className={`inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium border ${
@@ -232,8 +232,8 @@ export default function Home() {
                   </div>
                   
                   <div>
-                    <div className="text-sm font-medium text-foreground mb-4 pt-4 border-t border-border/50">
-                      Impact: <span className="text-muted-foreground font-normal">{project.impact}</span>
+                    <div className="text-sm font-medium mb-4 pt-4 border-t border-border/50">
+                      <span className="text-primary">Impact:</span> <span className="text-muted-foreground font-normal">{project.impact}</span>
                     </div>
                     <div className="flex flex-wrap gap-2">
                       {project.tags.map(tag => (
@@ -290,7 +290,7 @@ export default function Home() {
                       <span className="text-sm font-mono text-muted-foreground">{project.year}</span>
                       {project.link && <ArrowUpRight size={16} className="text-muted-foreground group-hover:text-primary transition-colors ml-auto" />}
                     </div>
-                    <h4 className="text-2xl md:text-3xl font-bold text-card-foreground group-hover:text-primary transition-colors mb-4">
+                    <h4 className="text-2xl md:text-3xl font-bold text-foreground mb-4">
                       {project.title}
                     </h4>
                     <p className="text-muted-foreground text-lg leading-relaxed mb-8">
@@ -306,7 +306,7 @@ export default function Home() {
                   </div>
                   <div className="md:border-l border-border/50 flex flex-col justify-center p-10 bg-muted/10">
                     <p className="text-xs font-mono text-muted-foreground uppercase tracking-wider mb-2">Impact</p>
-                    <p className="text-lg font-semibold text-[#86e5b4] mb-6">{project.impact}</p>
+                    <p className="text-lg font-semibold text-[#d4a843] mb-6">{project.impact}</p>
                     <p className="text-xs font-mono text-muted-foreground uppercase tracking-wider mb-2">What I owned</p>
                     <ul className="space-y-2 text-sm text-muted-foreground">
                       <li className="flex items-start gap-2"><span className="w-1.5 h-1.5 rounded-full bg-primary/50 mt-1.5 shrink-0"></span>Product strategy &amp; PRD</li>
@@ -488,7 +488,7 @@ export default function Home() {
                       <span className="flex items-center gap-1.5"><Calendar size={12}/> {post.date}</span>
                       <span className="flex items-center gap-1.5"><Clock size={12}/> {post.readTime}</span>
                     </div>
-                    <h4 className="text-xl font-bold mb-3 group-hover:text-primary transition-colors">
+                    <h4 className="text-xl font-bold mb-3 text-foreground">
                       {post.title}
                     </h4>
                     <p className="text-muted-foreground text-sm leading-relaxed mb-6">
