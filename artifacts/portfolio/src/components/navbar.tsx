@@ -4,12 +4,11 @@ import { motion, AnimatePresence } from "framer-motion";
 
 const navItems = [
   { label: "About", href: "#about" },
-  { label: "Projects", href: "#projects" },
+  { label: "Work", href: "#projects" },
+  { label: "Shipped", href: "#shipped" },
   { label: "Skills", href: "#skills" },
   { label: "Experience", href: "#experience" },
-  { label: "Education", href: "#education" },
-  { label: "Blog", href: "#blog" },
-  { label: "Contact", href: "#contact" },
+  { label: "Writing", href: "#blog" },
 ];
 
 export function Navbar() {
@@ -21,8 +20,7 @@ export function Navbar() {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 20);
 
-      // Find the current active section
-      const sections = navItems.map((item) => item.href.substring(1));
+      const sections = [...navItems.map((item) => item.href.substring(1)), "contact"];
       let current = "";
       
       for (const section of sections) {
@@ -39,7 +37,7 @@ export function Navbar() {
     };
 
     window.addEventListener("scroll", handleScroll, { passive: true });
-    handleScroll(); // init
+    handleScroll();
 
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
@@ -73,7 +71,7 @@ export function Navbar() {
         </a>
 
         {/* Desktop Nav */}
-        <nav className="hidden md:flex items-center gap-6">
+        <nav className="hidden md:flex items-center gap-1">
           {navItems.map((item) => (
             <a
               key={item.label}
@@ -82,7 +80,7 @@ export function Navbar() {
                 e.preventDefault();
                 handleNavClick(item.href);
               }}
-              className={`text-sm font-medium transition-colors hover:text-primary ${
+              className={`px-3 py-1.5 text-sm font-medium rounded-md transition-colors hover:text-primary ${
                 activeSection === item.href.substring(1)
                   ? "text-primary"
                   : "text-muted-foreground"
@@ -91,6 +89,16 @@ export function Navbar() {
               {item.label}
             </a>
           ))}
+          <a
+            href="#contact"
+            onClick={(e) => {
+              e.preventDefault();
+              handleNavClick("#contact");
+            }}
+            className="ml-3 px-4 py-1.5 text-sm font-medium rounded-full bg-primary text-primary-foreground hover:bg-primary/90 transition-colors"
+          >
+            Contact
+          </a>
         </nav>
 
         {/* Mobile Nav Toggle */}
@@ -130,6 +138,16 @@ export function Navbar() {
                   {item.label}
                 </a>
               ))}
+              <a
+                href="#contact"
+                onClick={(e) => {
+                  e.preventDefault();
+                  handleNavClick("#contact");
+                }}
+                className="inline-flex justify-center px-4 py-2 text-sm font-medium rounded-full bg-primary text-primary-foreground hover:bg-primary/90 transition-colors"
+              >
+                Contact
+              </a>
             </nav>
           </motion.div>
         )}

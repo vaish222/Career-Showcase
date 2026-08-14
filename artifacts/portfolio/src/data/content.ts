@@ -11,7 +11,15 @@ export const personal = {
   github: "https://github.com/vaish222",
   linkedin: "https://www.linkedin.com/in/vaishaligoel221/",
   resumeUrl: "/resume.pdf", // TODO: upload your resume PDF and update this path
+  photo: "/photo.jpg", // TODO: upload your headshot to artifacts/portfolio/public/photo.jpg
   location: "San Francisco Bay Area",
+  availabilityTags: ["Open to PM roles", "Open to relocation / remote"],
+  stats: [
+    { value: "15+", label: "years engineering" },
+    { value: "6", label: "enterprise products shipped" },
+    { value: "1st", label: "FWA AI Hackathon" },
+    { value: "$70K", label: "cost savings delivered" },
+  ],
   bio: `I'm a Senior Software Engineer with 15+ years of experience designing, modernizing, and scaling enterprise applications — most recently across Insurance and Transportation domains. I've led large-scale platform migrations, built cloud-native data pipelines, architected distributed systems, and mentored engineers through complex, high-stakes deliveries.
 
 Over time, my role has naturally expanded beyond engineering. I've been driving product discovery, leading impact analysis, translating ambiguous business needs into requirements and roadmaps, and owning cross-functional delivery end-to-end. That dual scope — spanning business analysis, product thinking, and engineering execution — is where I've done some of my best work.

@@ -1,8 +1,9 @@
 import { motion } from "framer-motion";
 import { SiGithub } from "react-icons/si";
-import { ArrowDown, Download, MapPin, Calendar, Clock, ArrowUpRight, Linkedin } from "lucide-react";
+import { ArrowDown, Download, MapPin, Calendar, Clock, ArrowUpRight, Linkedin, Mail } from "lucide-react";
 import { personal, projects, skills, experience, education, blogPosts } from "@/data/content";
 import { Navbar } from "@/components/navbar";
+import { useState } from "react";
 
 // Animation Variants
 const sectionVariants = {
@@ -19,6 +20,26 @@ const itemVariants = {
   visible: { opacity: 1, y: 0, transition: { duration: 0.5, ease: "easeOut" as const } }
 };
 
+// Profile photo with initials fallback
+function ProfilePhoto() {
+  const [imgError, setImgError] = useState(false);
+  if (!imgError) {
+    return (
+      <img
+        src={personal.photo}
+        alt={personal.name}
+        onError={() => setImgError(true)}
+        className="w-full h-full object-cover"
+      />
+    );
+  }
+  return (
+    <div className="w-full h-full flex items-center justify-center bg-muted/30">
+      <span className="text-6xl font-bold text-primary/60 font-mono">VG</span>
+    </div>
+  );
+}
+
 export default function Home() {
   return (
     <div className="min-h-screen bg-background text-foreground selection:bg-primary/30">
@@ -28,57 +49,101 @@ export default function Home() {
         {/* HERO SECTION */}
         <section 
           id="hero" 
-          className="relative min-h-screen flex items-center pt-20 px-6 md:px-12 max-w-6xl mx-auto"
+          className="relative min-h-screen flex items-center pt-24 pb-12 px-6 md:px-12 max-w-6xl mx-auto"
         >
-          <motion.div 
-            initial="hidden"
-            animate="visible"
-            variants={sectionVariants}
-            className="max-w-4xl"
-          >
-            <motion.h1 
-              variants={itemVariants}
-              className="text-5xl md:text-7xl font-bold tracking-tight mb-6 text-foreground leading-[1.1]"
+          <div className="w-full grid md:grid-cols-[1fr_auto] gap-12 md:gap-16 items-center">
+            {/* Left: Text */}
+            <motion.div 
+              initial="hidden"
+              animate="visible"
+              variants={sectionVariants}
             >
-              {personal.name}
-            </motion.h1>
-            <motion.p 
-              variants={itemVariants}
-              className="text-xl md:text-2xl text-muted-foreground max-w-3xl leading-relaxed mb-10 font-light"
-            >
-              {personal.tagline}
-            </motion.p>
-            
-            <motion.div variants={itemVariants} className="flex flex-wrap items-center gap-4">
-              <a 
-                href={personal.resumeUrl}
-                className="inline-flex items-center gap-2 bg-primary hover:bg-primary/90 text-primary-foreground px-6 py-3 rounded-full font-medium transition-colors"
-                target="_blank"
-                rel="noreferrer"
+              {/* Availability tags */}
+              <motion.div variants={itemVariants} className="flex flex-wrap gap-2 mb-8">
+                {personal.availabilityTags.map((tag) => (
+                  <span
+                    key={tag}
+                    className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-medium border border-border/60 bg-muted/30 text-muted-foreground"
+                  >
+                    {tag === personal.availabilityTags[0] && (
+                      <span className="w-1.5 h-1.5 rounded-full bg-[#86e5b4] inline-block" />
+                    )}
+                    {tag}
+                  </span>
+                ))}
+              </motion.div>
+
+              <motion.h1 
+                variants={itemVariants}
+                className="text-5xl md:text-7xl font-bold tracking-tight mb-6 text-foreground leading-[1.1]"
               >
-                <Download size={18} />
-                Download Resume
-              </a>
-              <a 
-                href={personal.github}
-                className="p-3 text-muted-foreground hover:text-foreground hover:bg-muted rounded-full transition-colors"
-                target="_blank"
-                rel="noreferrer"
-                aria-label="GitHub"
+                {personal.name}
+              </motion.h1>
+              <motion.p 
+                variants={itemVariants}
+                className="text-xl md:text-2xl text-muted-foreground max-w-2xl leading-relaxed mb-10 font-light"
               >
-                <SiGithub size={22} />
-              </a>
-              <a 
-                href={personal.linkedin}
-                className="p-3 text-muted-foreground hover:text-foreground hover:bg-muted rounded-full transition-colors"
-                target="_blank"
-                rel="noreferrer"
-                aria-label="LinkedIn"
-              >
-                <Linkedin size={22} />
-              </a>
+                {personal.tagline}
+              </motion.p>
+              
+              <motion.div variants={itemVariants} className="flex flex-wrap items-center gap-4">
+                <a 
+                  href={personal.resumeUrl}
+                  className="inline-flex items-center gap-2 bg-primary hover:bg-primary/90 text-primary-foreground px-6 py-3 rounded-full font-medium transition-colors"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  <Download size={18} />
+                  Download Resume
+                </a>
+                <a 
+                  href={personal.github}
+                  className="p-3 text-muted-foreground hover:text-foreground hover:bg-muted rounded-full transition-colors"
+                  target="_blank"
+                  rel="noreferrer"
+                  aria-label="GitHub"
+                >
+                  <SiGithub size={22} />
+                </a>
+                <a 
+                  href={personal.linkedin}
+                  className="p-3 text-muted-foreground hover:text-foreground hover:bg-muted rounded-full transition-colors"
+                  target="_blank"
+                  rel="noreferrer"
+                  aria-label="LinkedIn"
+                >
+                  <Linkedin size={22} />
+                </a>
+              </motion.div>
             </motion.div>
-          </motion.div>
+
+            {/* Right: Photo card */}
+            <motion.div
+              initial={{ opacity: 0, scale: 0.95 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.7, delay: 0.2, ease: "easeOut" }}
+              className="hidden md:flex flex-col items-center"
+            >
+              <div className="relative w-64 h-72 rounded-2xl overflow-hidden border border-border/50 bg-card shadow-2xl shadow-black/40">
+                <ProfilePhoto />
+              </div>
+              <div className="mt-4 text-center">
+                <p className="font-semibold text-foreground">{personal.name}</p>
+                <p className="text-sm text-muted-foreground">{personal.title}</p>
+              </div>
+              <div className="flex items-center gap-3 mt-3">
+                <a href={`mailto:${personal.email}`} className="p-2 rounded-full bg-muted/40 text-muted-foreground hover:text-foreground transition-colors" aria-label="Email">
+                  <Mail size={16} />
+                </a>
+                <a href={personal.linkedin} target="_blank" rel="noreferrer" className="p-2 rounded-full bg-muted/40 text-muted-foreground hover:text-foreground transition-colors" aria-label="LinkedIn">
+                  <Linkedin size={16} />
+                </a>
+                <a href={personal.github} target="_blank" rel="noreferrer" className="p-2 rounded-full bg-muted/40 text-muted-foreground hover:text-foreground transition-colors" aria-label="GitHub">
+                  <SiGithub size={16} />
+                </a>
+              </div>
+            </motion.div>
+          </div>
 
           <motion.div 
             initial={{ opacity: 0 }}
@@ -87,6 +152,24 @@ export default function Home() {
             className="absolute bottom-12 left-6 md:left-12 animate-bounce text-muted-foreground"
           >
             <ArrowDown size={24} />
+          </motion.div>
+        </section>
+
+        {/* STATS STRIP */}
+        <section className="bg-card/60 border-y border-border/50 py-10 px-6 md:px-12">
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: "-50px" }}
+            variants={sectionVariants}
+            className="max-w-6xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-8"
+          >
+            {personal.stats.map((stat) => (
+              <motion.div key={stat.label} variants={itemVariants} className="text-center">
+                <p className="text-3xl md:text-4xl font-bold text-foreground">{stat.value}</p>
+                <p className="text-sm text-muted-foreground mt-1">{stat.label}</p>
+              </motion.div>
+            ))}
           </motion.div>
         </section>
 
@@ -115,7 +198,7 @@ export default function Home() {
           </motion.div>
         </section>
 
-        {/* PROJECTS SECTION */}
+        {/* WORK / PROJECTS SECTION */}
         <section id="projects" className="py-24 px-6 md:px-12 max-w-6xl mx-auto border-t border-border/50">
           <motion.div
             initial="hidden"
@@ -124,7 +207,7 @@ export default function Home() {
             variants={sectionVariants}
           >
             <div className="mb-12">
-              <h2 className="text-sm font-mono text-primary uppercase tracking-wider mb-2">02. Projects</h2>
+              <h2 className="text-sm font-mono text-primary uppercase tracking-wider mb-2">02. Work</h2>
               <h3 className="text-3xl font-bold">Selected Work</h3>
             </div>
 
@@ -175,6 +258,71 @@ export default function Home() {
                 </motion.div>
               ))}
             </div>
+          </motion.div>
+        </section>
+
+        {/* PRODUCTS I SHIPPED MYSELF */}
+        <section id="shipped" className="py-24 px-6 md:px-12 max-w-6xl mx-auto border-t border-border/50">
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: "-100px" }}
+            variants={sectionVariants}
+          >
+            <div className="mb-12 text-center">
+              <p className="text-sm font-mono text-primary uppercase tracking-wider mb-3">0→1 builds</p>
+              <h3 className="text-4xl md:text-5xl font-bold mb-4">
+                Products I shipped{" "}
+                <span className="text-primary">myself.</span>
+              </h3>
+              <p className="text-lg text-muted-foreground max-w-2xl mx-auto font-light">
+                Self-initiated product work — from idea to shipped. Pricing, positioning, cold-start, knowing when to pivot. The parts of product you can't learn from a ticket queue.
+              </p>
+            </div>
+
+            {/* Featured self-shipped product */}
+            {projects.filter(p => p.id === 1).map((project) => (
+              <motion.div
+                key={project.id}
+                variants={itemVariants}
+                className="group relative rounded-2xl bg-card border border-card-border hover:border-primary/50 transition-colors overflow-hidden"
+              >
+                <div className="grid md:grid-cols-[2fr_1fr] gap-0">
+                  <div className="p-10 md:p-12">
+                    <div className="flex items-center gap-3 mb-6">
+                      <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium border bg-[#2b4c3b]/30 text-[#86e5b4] border-[#86e5b4]/20">
+                        {project.status}
+                      </span>
+                      <span className="text-sm font-mono text-muted-foreground">{project.year}</span>
+                    </div>
+                    <h4 className="text-2xl md:text-3xl font-bold text-card-foreground group-hover:text-primary transition-colors mb-4">
+                      {project.title}
+                    </h4>
+                    <p className="text-muted-foreground text-lg leading-relaxed mb-8">
+                      {project.description}
+                    </p>
+                    <div className="flex flex-wrap gap-2 mb-8">
+                      {project.tags.map(tag => (
+                        <span key={tag} className="text-xs px-2 py-1 bg-muted/50 rounded-md text-muted-foreground">
+                          {tag}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+                  <div className="md:border-l border-border/50 flex flex-col justify-center p-10 bg-muted/10">
+                    <p className="text-xs font-mono text-muted-foreground uppercase tracking-wider mb-2">Impact</p>
+                    <p className="text-lg font-semibold text-[#86e5b4] mb-6">{project.impact}</p>
+                    <p className="text-xs font-mono text-muted-foreground uppercase tracking-wider mb-2">What I owned</p>
+                    <ul className="space-y-2 text-sm text-muted-foreground">
+                      <li className="flex items-start gap-2"><span className="w-1.5 h-1.5 rounded-full bg-primary/50 mt-1.5 shrink-0"></span>Product strategy &amp; PRD</li>
+                      <li className="flex items-start gap-2"><span className="w-1.5 h-1.5 rounded-full bg-primary/50 mt-1.5 shrink-0"></span>System design (HLD + LLD)</li>
+                      <li className="flex items-start gap-2"><span className="w-1.5 h-1.5 rounded-full bg-primary/50 mt-1.5 shrink-0"></span>Execution &amp; delivery</li>
+                      <li className="flex items-start gap-2"><span className="w-1.5 h-1.5 rounded-full bg-primary/50 mt-1.5 shrink-0"></span>Multi-agent AI prototyping</li>
+                    </ul>
+                  </div>
+                </div>
+              </motion.div>
+            ))}
           </motion.div>
         </section>
 
@@ -314,7 +462,7 @@ export default function Home() {
           </motion.div>
         </section>
 
-        {/* BLOG SECTION */}
+        {/* HOW I THINK WHEN NOBODY ASKS — Writing/Blog */}
         <section id="blog" className="py-24 px-6 md:px-12 max-w-6xl mx-auto border-t border-border/50">
           <motion.div
             initial="hidden"
@@ -323,8 +471,14 @@ export default function Home() {
             variants={sectionVariants}
           >
             <div className="mb-12">
-              <h2 className="text-sm font-mono text-primary uppercase tracking-wider mb-2">06. Writing</h2>
-              <h3 className="text-3xl font-bold">Thoughts & Essays</h3>
+              <h2 className="text-sm font-mono text-primary uppercase tracking-wider mb-3">06. Writing</h2>
+              <h3 className="text-4xl md:text-5xl font-bold mb-4">
+                How I think when{" "}
+                <span className="text-primary">nobody asks.</span>
+              </h3>
+              <p className="text-lg text-muted-foreground font-light max-w-2xl">
+                Product thinking, engineering lessons, and perspective on the space between code and customer — documented unprompted.
+              </p>
             </div>
 
             <div className="grid md:grid-cols-2 gap-6">
