@@ -39,7 +39,7 @@ export const projects = [
     tags: ["Product Strategy", "AI/LLM", "Multi-Agent", "PRD", "Prototyping"],
     impact: "FWA AI Hackathon Winner — 1st place",
     year: "2024",
-    link: null,
+    link: "https://careerfolio-fwa.lovable.app/",
   },
   {
     id: 2,

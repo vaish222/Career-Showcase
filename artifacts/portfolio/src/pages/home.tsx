@@ -287,6 +287,9 @@ export default function Home() {
                 variants={itemVariants}
                 className="group relative rounded-2xl bg-card border border-card-border hover:border-primary/50 transition-colors overflow-hidden"
               >
+                {project.link && (
+                  <a href={project.link} target="_blank" rel="noreferrer" className="absolute inset-0 z-10 rounded-2xl" aria-label={`View ${project.title}`} />
+                )}
                 <div className="grid md:grid-cols-[2fr_1fr] gap-0">
                   <div className="p-10 md:p-12">
                     <div className="flex items-center gap-3 mb-6">
@@ -294,6 +297,7 @@ export default function Home() {
                         {project.status}
                       </span>
                       <span className="text-sm font-mono text-muted-foreground">{project.year}</span>
+                      {project.link && <ArrowUpRight size={16} className="text-muted-foreground group-hover:text-primary transition-colors ml-auto" />}
                     </div>
                     <h4 className="text-2xl md:text-3xl font-bold text-card-foreground group-hover:text-primary transition-colors mb-4">
                       {project.title}
