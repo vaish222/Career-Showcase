@@ -212,7 +212,7 @@ export default function Home() {
             </div>
 
             <div className="grid md:grid-cols-2 gap-6">
-              {projects.map((project) => (
+              {projects.filter(p => p.id !== 1).map((project) => (
                 <motion.div 
                   key={project.id} 
                   variants={itemVariants}
