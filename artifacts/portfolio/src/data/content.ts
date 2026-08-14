@@ -192,7 +192,7 @@ export const education = [
     institution: "Certifications & AI Credentials",
     degree: "FWA AI Hackathon Winner · Google 5-Day AI Agents Intensive · AWS Scholars Program (AI Productivity App)",
     period: "",
-    notes: "Also: Introduction to MCP · Sun Certified Java Developer (SCJP) · Machine Learning Specialization (DeepLearning.AI) · RAG with LangChain",
+    notes: "Also: Claude Code in Action · Introduction to MCP · Sun Certified Java Developer (SCJP) · Machine Learning Specialization (DeepLearning.AI) · RAG with LangChain",
   },
 ];
 

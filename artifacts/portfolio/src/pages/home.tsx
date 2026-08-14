@@ -88,15 +88,6 @@ export default function Home() {
               
               <motion.div variants={itemVariants} className="flex flex-wrap items-center gap-4">
                 <a 
-                  href={personal.resumeUrl}
-                  className="inline-flex items-center gap-2 bg-primary hover:bg-primary/90 text-primary-foreground px-6 py-3 rounded-full font-medium transition-colors"
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  <Download size={18} />
-                  Download Resume
-                </a>
-                <a 
                   href={personal.github}
                   className="p-3 text-muted-foreground hover:text-foreground hover:bg-muted rounded-full transition-colors"
                   target="_blank"
