@@ -12,7 +12,7 @@ export const personal = {
   linkedin: "https://www.linkedin.com/in/vaishaligoel221/",
   resumeUrl: "/resume.pdf", // TODO: upload your resume PDF and update this path
   photo: "/photo.jpg", // TODO: upload your headshot to artifacts/portfolio/public/photo.jpg
-  location: "San Francisco Bay Area",
+  location: "Cupertino, CA",
   availabilityTags: ["Open to PM roles"],
   stats: [
     { value: "15+", label: "years engineering" },
@@ -32,7 +32,7 @@ I bring structure to ambiguous problems, alignment to cross-functional teams, an
 export const projects = [
   {
     id: 1,
-    title: "AI Career Intelligence Platform",
+    title: "CareerFolio — AI Career Intelligence Platform",
     description:
       "Conceived the product opportunity, created the strategy, PRD, high-level/low-level design, and execution plan for an AI-powered career intelligence platform. Built the working product through prompt-driven development and multi-agent AI experimentation — demonstrating hands-on product discovery, solution design, rapid prototyping, and iteration.",
     status: "Launched" as const,
@@ -144,9 +144,9 @@ export const skills = {
 export const experience = [
   {
     id: 1,
-    company: "Mutual of Omaha (or current employer)", // TODO: confirm company name if you'd like it shown
+    company: "Mutual of Omaha",
     role: "Engineer II / Engineer I / Application Systems Analyst",
-    period: "Aug 2019 – Present",
+    period: "Feb 2019 – Present",
     description:
       "Current scope spans business analysis, product discovery, engineering delivery, testing, and production support across enterprise Insurance applications.",
     highlights: [
@@ -160,9 +160,9 @@ export const experience = [
   },
   {
     id: 2,
-    company: "Tech Mahindra (formerly Mahindra Satyam / Satyam Computer Services)",
-    role: "Team Lead / Onsite Coordinator / Senior Software Developer",
-    period: "Jan 2008 – Jul 2016",
+    company: "Tech Mahindra (formerly Mahindra Satyam)",
+    role: "Technical Team Lead / Onsite Coordinator / Team Lead / Software Developer",
+    period: "Jan 2008 – Feb 2016",
     description:
       "Led globally distributed engineering teams delivering enterprise workforce-management capabilities supporting Union Pacific Railroad operations across 23 states.",
     highlights: [
@@ -179,20 +179,20 @@ export const education = [
   {
     institution: "University of Nebraska at Omaha",
     degree: "M.S., Management Information Systems (Data Analytics)",
-    period: "",
+    period: "2018 – 2021",
     notes: "Graduate Certificate, Systems Analysis & Design",
   },
   {
     institution: "Pt. Ravishankar Shukla University",
     degree: "Bachelor of Engineering, Computer Science",
-    period: "",
+    period: "2003 – 2007",
     notes: "",
   },
   {
     institution: "Certifications & AI Credentials",
-    degree: "FWA AI Hackathon Winner · Google 5-Day AI Agents Intensive · Machine Learning Specialization (DeepLearning.AI)",
+    degree: "FWA AI Hackathon Winner · Google 5-Day AI Agents Intensive · AWS Scholars Program (AI Productivity App)",
     period: "",
-    notes: "Also: Claude Code in Action · RAG with LangChain · AWS AI Practitioner · Introduction to MCP · Sun Certified Java Programmer (SCJP)",
+    notes: "Also: Introduction to MCP · Sun Certified Java Developer (SCJP) · Machine Learning Specialization (DeepLearning.AI) · RAG with LangChain",
   },
 ];
 
