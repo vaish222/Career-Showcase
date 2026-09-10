@@ -98,6 +98,73 @@ export const projects = [
   },
 ];
 
+export const shippedProjects = [
+  {
+    ...projects[0],
+    eyebrow: "0→1 AI product",
+    ownership: [
+      "Product strategy & PRD",
+      "System design (HLD + LLD)",
+      "Execution & delivery",
+      "Multi-agent AI prototyping",
+    ],
+  },
+  {
+    id: 7,
+    title: "AI Product Decision Assistant",
+    description:
+      "Built a transparent decision-support product that helps teams define a decision, capture project and enterprise context, generate evaluation criteria, compare options, and reach a recommendation. The experience clearly separates user facts, AI inferences, validated ratings, and deterministic weighted calculations.",
+    status: "Launched" as const,
+    tags: ["Product Decisions", "AI Evaluation", "React", "OpenAI", "Ollama"],
+    impact: "Explainable recommendations with deterministic scoring",
+    year: "2026",
+    link: "https://github.com/vaish222/ai-product-decision-assistant",
+    eyebrow: "Explainable AI",
+    ownership: [
+      "Decision workflow design",
+      "Enterprise constraint modeling",
+      "AI criteria generation",
+      "Transparent scoring logic",
+    ],
+  },
+  {
+    id: 8,
+    title: "I Got This — What's Next?",
+    description:
+      "Created a privacy-conscious, RAG-powered family knowledge assistant that connects schedules, deadlines, invitations, activities, meals, learning, volunteering, and household tasks through one conversational interface. Answers are grounded in source documents and clarify when information is insufficient.",
+    status: "Launched" as const,
+    tags: ["RAG", "Python", "Streamlit", "Pinecone", "Ollama"],
+    impact: "One grounded interface for fragmented family commitments",
+    year: "2026",
+    link: "https://github.com/vaish222/i-got-this-ai-rag",
+    eyebrow: "Privacy-first RAG",
+    ownership: [
+      "Product concept & use cases",
+      "Knowledge architecture",
+      "Grounded answer experience",
+      "Quality & latency evaluation",
+    ],
+  },
+  {
+    id: 9,
+    title: "StayOps AI",
+    description:
+      "Designed a multi-agent operations manager for self-managing short-term rental hosts. Specialized agents analyze bookings, guest messages, turnovers, and maintenance across eight properties, prioritize risks, and require human approval before consequential actions.",
+    status: "Launched" as const,
+    tags: ["Multi-Agent", "LangGraph", "LangChain", "HITL", "LangSmith"],
+    impact: "One prioritized operations view across eight properties",
+    year: "2026",
+    link: "https://github.com/vaish222/stayops-ai",
+    eyebrow: "Agentic operations",
+    ownership: [
+      "Product requirements",
+      "Multi-agent architecture",
+      "Human-in-the-loop safety",
+      "Evaluation framework",
+    ],
+  },
+];
+
 export const skills = {
   engineering: [
     "Java / Spring Boot",

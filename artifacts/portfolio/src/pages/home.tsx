@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { SiGithub } from "react-icons/si";
-import { ArrowDown, Download, MapPin, Calendar, Clock, ArrowUpRight, Linkedin, Mail } from "lucide-react";
-import { personal, projects, skills, experience, education, blogPosts } from "@/data/content";
+import { ArrowDown, MapPin, Calendar, Clock, ArrowUpRight, Linkedin, Mail } from "lucide-react";
+import { personal, projects, shippedProjects, skills, experience, education, blogPosts } from "@/data/content";
 import { Navbar } from "@/components/navbar";
 import { useState } from "react";
 
@@ -251,8 +251,8 @@ export default function Home() {
               </p>
             </div>
 
-            {/* Featured self-shipped product */}
-            {projects.filter(p => p.id === 1).map((project) => (
+            <div className="grid gap-6">
+            {shippedProjects.map((project) => (
               <motion.div
                 key={project.id}
                 variants={itemVariants}
@@ -264,6 +264,9 @@ export default function Home() {
                 <div className="grid md:grid-cols-[2fr_1fr] gap-0">
                   <div className="p-10 md:p-12">
                     <div className="flex items-center gap-3 mb-6">
+                      <span className="text-xs font-mono text-primary uppercase tracking-wider">
+                        {project.eyebrow}
+                      </span>
                       <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium border bg-[#2b4c3b]/30 text-[#86e5b4] border-[#86e5b4]/20">
                         {project.status}
                       </span>
@@ -289,15 +292,18 @@ export default function Home() {
                     <p className="text-lg font-semibold text-[#d4a843] mb-6">{project.impact}</p>
                     <p className="text-xs font-mono text-muted-foreground uppercase tracking-wider mb-2">What I owned</p>
                     <ul className="space-y-2 text-sm text-muted-foreground">
-                      <li className="flex items-start gap-2"><span className="w-1.5 h-1.5 rounded-full bg-primary/50 mt-1.5 shrink-0"></span>Product strategy &amp; PRD</li>
-                      <li className="flex items-start gap-2"><span className="w-1.5 h-1.5 rounded-full bg-primary/50 mt-1.5 shrink-0"></span>System design (HLD + LLD)</li>
-                      <li className="flex items-start gap-2"><span className="w-1.5 h-1.5 rounded-full bg-primary/50 mt-1.5 shrink-0"></span>Execution &amp; delivery</li>
-                      <li className="flex items-start gap-2"><span className="w-1.5 h-1.5 rounded-full bg-primary/50 mt-1.5 shrink-0"></span>Multi-agent AI prototyping</li>
+                      {project.ownership.map((item) => (
+                        <li key={item} className="flex items-start gap-2">
+                          <span className="w-1.5 h-1.5 rounded-full bg-primary/50 mt-1.5 shrink-0"></span>
+                          {item}
+                        </li>
+                      ))}
                     </ul>
                   </div>
                 </div>
               </motion.div>
             ))}
+            </div>
           </motion.div>
         </section>
 
