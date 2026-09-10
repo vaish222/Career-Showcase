@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { SiGithub } from "react-icons/si";
-import { ArrowDown, MapPin, Calendar, Clock, ArrowUpRight, Linkedin, Mail } from "lucide-react";
+import { ArrowDown, Calendar, Clock, ArrowUpRight, Linkedin, Mail } from "lucide-react";
 import { personal, projects, shippedProjects, skills, experience, education, blogPosts } from "@/data/content";
 import { Navbar } from "@/components/navbar";
 import { useState } from "react";
@@ -156,10 +156,6 @@ export default function Home() {
             <div>
               <h2 className="text-sm font-mono text-primary uppercase tracking-wider mb-2">01. About</h2>
               <h3 className="text-3xl font-bold mb-6">The Transition</h3>
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-muted/50 text-sm text-muted-foreground border border-border/50">
-                <MapPin size={14} />
-                {personal.location}
-              </div>
             </div>
             <div className="space-y-6 text-lg text-muted-foreground font-light leading-relaxed">
               {personal.bio.split('\n\n').map((paragraph, i) => (
