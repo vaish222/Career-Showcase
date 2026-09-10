@@ -86,26 +86,6 @@ export default function Home() {
                 {personal.tagline}
               </motion.p>
               
-              <motion.div variants={itemVariants} className="flex flex-wrap items-center gap-4">
-                <a 
-                  href={personal.github}
-                  className="p-3 text-muted-foreground hover:text-foreground hover:bg-muted rounded-full transition-colors"
-                  target="_blank"
-                  rel="noreferrer"
-                  aria-label="GitHub"
-                >
-                  <SiGithub size={22} />
-                </a>
-                <a 
-                  href={personal.linkedin}
-                  className="p-3 text-muted-foreground hover:text-foreground hover:bg-muted rounded-full transition-colors"
-                  target="_blank"
-                  rel="noreferrer"
-                  aria-label="LinkedIn"
-                >
-                  <Linkedin size={22} />
-                </a>
-              </motion.div>
             </motion.div>
 
             {/* Right: Photo card */}
