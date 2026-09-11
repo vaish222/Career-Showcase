@@ -4,29 +4,27 @@
 
 export const personal = {
   name: "Vaishali Goel",
-  title: "Senior Software Engineer → Technical Product Manager",
+  title: "Senior Software Engineer | Technical Product Leader | AI Builder",
   tagline:
-    "15+ years building enterprise software — now channeling that depth into product leadership that bridges technical rigor with real business outcomes.",
+    "15+ years building enterprise software, leading complex technical initiatives, and translating business needs into shipped solutions. Now bringing that depth to technical product leadership across AI, platforms, and enterprise systems.",
   email: "vaishali221@gmail.com",
   github: "https://github.com/vaish222",
   linkedin: "https://www.linkedin.com/in/vaishaligoel221/",
   resumeUrl: "/resume.pdf", // TODO: upload your resume PDF and update this path
-  photo: "/photo.jpg", // TODO: upload your headshot to artifacts/portfolio/public/photo.jpg
+  photo: "/photo.jpg",
   location: "Cupertino, CA",
-  availabilityTags: ["Open to PM roles"],
+  availabilityTags: ["Open to Technical PM & AI Product roles"],
   stats: [
-    { value: "15+", label: "years engineering" },
-    { value: "6", label: "enterprise products shipped" },
-    { value: "1st", label: "FWA AI Hackathon" },
-    { value: "$70K", label: "cost savings delivered" },
+    { value: "15+", label: "Years in Enterprise Technology" },
+    { value: "6", label: "Major Products & Platforms Shipped" },
+    { value: "1st place", label: "FWA AI Hackathon" },
+    { value: "$70K", label: "Annual Savings Delivered" },
   ],
-  bio: `I'm a Senior Software Engineer with 15+ years of experience designing, modernizing, and scaling enterprise applications — most recently across Insurance and Transportation domains. I've led large-scale platform migrations, built cloud-native data pipelines, architected distributed systems, and mentored engineers through complex, high-stakes deliveries.
+  bio: `I'm a Senior Software Engineer with 15+ years of experience building and modernizing enterprise applications across insurance and transportation.
+My work has increasingly expanded beyond engineering into product discovery, impact analysis, requirements, solution design, stakeholder alignment, and cross-functional delivery. I've often worked in the space between business intent and engineering execution — turning ambiguous problems into solutions teams can actually ship.
+Today, I'm focused on Technical Product Management and AI Product roles, where I can combine deep engineering fluency with product thinking, customer outcomes, and execution.
 
-Over time, my role has naturally expanded beyond engineering. I've been driving product discovery, leading impact analysis, translating ambiguous business needs into requirements and roadmaps, and owning cross-functional delivery end-to-end. That dual scope — spanning business analysis, product thinking, and engineering execution — is where I've done some of my best work.
-
-I'm now making that shift official: moving fully into Product Management. My technical fluency means I speak engineering's language, build trust quickly with development teams, and understand tradeoffs at a level most PMs can't. My product instincts come from years of sitting in discovery, caring about why features exist, and seeing firsthand how the gap between business intent and engineering execution creates waste.
-
-I bring structure to ambiguous problems, alignment to cross-functional teams, and a track record of shipping things that actually move the needle.`,
+What I bring: Technical depth · Product discovery · AI solution design · Cross-functional leadership · Enterprise delivery`,
 };
 
 export const projects = [
@@ -45,10 +43,10 @@ export const projects = [
     id: 2,
     title: "Enterprise Print Modernization",
     description:
-      "Owned end-to-end delivery of a high-visibility enterprise print modernization initiative — driving architecture, requirements, implementation, testing, deployment, and production support. Managed vendor transition and cross-functional alignment across engineering, operations, and business partners.",
+      "Led the modernization of a high-visibility enterprise print workflow, translating business and operational requirements into architecture, implementation, testing, vendor coordination, and production rollout.",
     status: "Launched" as const,
     tags: ["Enterprise Platform", "Java", "Cross-functional Delivery", "Vendor Management"],
-    impact: "~$70K annual operational savings · zero-incident rollout",
+    impact: "~$70K+ annual operational savings · Zero-incident rollout",
     year: "2023",
     link: null,
   },
@@ -131,7 +129,7 @@ export const shippedProjects = [
     id: 8,
     title: "I Got This — What's Next?",
     description:
-      "Created a privacy-conscious, RAG-powered family knowledge assistant that connects schedules, deadlines, invitations, activities, meals, learning, volunteering, and household tasks through one conversational interface. Answers are grounded in source documents and clarify when information is insufficient.",
+      "Built a RAG assistant that grounds answers in family source documents and evaluates whether retrieved evidence is strong enough to answer, rather than generating unsupported responses.",
     status: "Launched" as const,
     tags: ["RAG", "Python", "Streamlit", "Pinecone", "Ollama"],
     impact: "One grounded interface for fragmented family commitments",
@@ -139,17 +137,17 @@ export const shippedProjects = [
     link: "https://github.com/vaish222/i-got-this-ai-rag",
     eyebrow: "Privacy-first RAG",
     ownership: [
-      "Product concept & use cases",
-      "Knowledge architecture",
-      "Grounded answer experience",
-      "Quality & latency evaluation",
+        "Product concept & use cases" +
+        "Hybrid retrieval architecture" +
+        "Grounding & evidence gating" +
+        "RAG evaluation"
     ],
   },
   {
     id: 9,
     title: "StayOps AI",
     description:
-      "Designed a multi-agent operations manager for self-managing short-term rental hosts. Specialized agents analyze bookings, guest messages, turnovers, and maintenance across eight properties, prioritize risks, and require human approval before consequential actions.",
+      "Designed an AI operations manager that prioritizes work across eight properties while explicitly separating recommendations from consequential actions requiring human approval.",
     status: "Launched" as const,
     tags: ["Multi-Agent", "LangGraph", "LangChain", "HITL", "LangSmith"],
     impact: "One prioritized operations view across eight properties",
@@ -158,8 +156,9 @@ export const shippedProjects = [
     eyebrow: "Agentic operations",
     ownership: [
       "Product requirements",
-      "Multi-agent architecture",
-      "Human-in-the-loop safety",
+      "Workflow & agent boundaries (multi agent)",
+      "Risk/escalation design",
+      "Human-in-the-loop controls",
       "Evaluation framework",
     ],
   },
@@ -181,7 +180,7 @@ export const skills = {
     "Selenium / JUnit",
   ],
   product: [
-    "Product Discovery & Strategy",
+    "Product Discovery",
     "Requirements & Impact Analysis",
     "Current / Future State Mapping",
     "User Stories & JIRA Delivery",
@@ -192,19 +191,27 @@ export const skills = {
     "Prototyping & Mockups",
     "Product Analytics & Reporting",
     "Agile / Scrum",
-    "Vendor Management",
+    "Prioritization"
   ],
-  tools: [
-    "GitHub Copilot",
-    "AI Agents & MCP",
-    "RAG & Vector Databases",
+  aiProduct: [
+    "RAG",
+    "AI Agents",
+    "LLM Evaluation",
     "Prompt Engineering",
-    "Tableau",
-    "JIRA / Workfront",
-    "Databricks",
-    "SonarQube",
+    "MCP",
+    "Vector Databases",
+    "Human-in-the-Loop",
+    "Evals",
+    "Fine-tuning"
+  ],
+  delivery: [
+    "GitHub/Bitbucket",
+    "JIRA",
+    "CI/CD",
     "Jenkins",
-    "Git / Bitbucket",
+    "Docker",
+    "Tableau",
+    "Snowflake"
   ],
 };
 
@@ -212,7 +219,7 @@ export const experience = [
   {
     id: 1,
     company: "Mutual of Omaha",
-    role: "Engineer II / Engineer I / Application Systems Analyst",
+    role: "Engineer II — Product & Engineering",
     period: "Feb 2019 – Present",
     description:
       "Current scope spans business analysis, product discovery, engineering delivery, testing, and production support across enterprise Insurance applications.",
@@ -228,7 +235,7 @@ export const experience = [
   {
     id: 2,
     company: "Tech Mahindra (formerly Mahindra Satyam)",
-    role: "Technical Team Lead / Onsite Coordinator / Team Lead / Software Developer",
+    role: "Technical Team Lead / Onsite Coordinator",
     period: "Jan 2008 – Feb 2016",
     description:
       "Led globally distributed engineering teams delivering enterprise workforce-management capabilities supporting Union Pacific Railroad operations across 23 states.",

@@ -155,7 +155,7 @@ export default function Home() {
           >
             <div>
               <h2 className="text-sm font-mono text-primary uppercase tracking-wider mb-2">01. About</h2>
-              <h3 className="text-3xl font-bold mb-6">The Transition</h3>
+              <h3 className="text-3xl font-bold mb-6">Engineering Depth. Product Mindset</h3>
             </div>
             <div className="space-y-6 text-lg text-muted-foreground font-light leading-relaxed">
               {personal.bio.split('\n\n').map((paragraph, i) => (
@@ -174,7 +174,7 @@ export default function Home() {
             variants={sectionVariants}
           >
             <div className="mb-12">
-              <h2 className="text-sm font-mono text-primary uppercase tracking-wider mb-2">02. Work</h2>
+              <h2 className="text-sm font-mono text-primary uppercase tracking-wider mb-2">02. Enterprise Impact</h2>
               <h3 className="text-3xl font-bold">Selected Work</h3>
             </div>
 
@@ -237,10 +237,9 @@ export default function Home() {
             variants={sectionVariants}
           >
             <div className="mb-12 text-center">
-              <p className="text-sm font-mono text-primary uppercase tracking-wider mb-3">0→1 builds</p>
               <h3 className="text-4xl md:text-5xl font-bold mb-4">
-                Products I shipped{" "}
-                <span className="text-primary">myself.</span>
+                Products I Built From{" "}
+                <span className="text-primary">0 → 1.</span>
               </h3>
               <p className="text-lg text-muted-foreground max-w-2xl mx-auto font-light">
                 Self-initiated product work — from idea to shipped. Pricing, positioning, cold-start, knowing when to pivot. The parts of product you can't learn from a ticket queue.
@@ -347,11 +346,25 @@ export default function Home() {
 
               <motion.div variants={itemVariants} className="space-y-6">
                 <h4 className="text-lg font-semibold flex items-center gap-2 pb-2 border-b border-border/50">
-                  <span className="w-2 h-2 rounded-full bg-[#86e5b4]"></span>
-                  Tools
+                  <span className="w-2 h-2 rounded-full bg-[#f5a840]"></span>
+                  AI Product & Engineering
                 </h4>
                 <div className="flex flex-wrap gap-2">
-                  {skills.tools.map(skill => (
+                  {skills.aiProduct.map(skill => (
+                      <span key={skill} className="px-3 py-1.5 bg-card border border-card-border rounded-lg text-sm text-card-foreground">
+                      {skill}
+                    </span>
+                  ))}
+                </div>
+              </motion.div>
+
+              <motion.div variants={itemVariants} className="space-y-6">
+                <h4 className="text-lg font-semibold flex items-center gap-2 pb-2 border-b border-border/50">
+                  <span className="w-2 h-2 rounded-full bg-[#86e5b4]"></span>
+                  Delivery & Platforms
+                </h4>
+                <div className="flex flex-wrap gap-2">
+                  {skills.delivery.map(skill => (
                     <span key={skill} className="px-3 py-1.5 bg-card border border-card-border rounded-lg text-sm text-card-foreground">
                       {skill}
                     </span>
