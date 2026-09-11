@@ -137,10 +137,10 @@ export const shippedProjects = [
     link: "https://github.com/vaish222/i-got-this-ai-rag",
     eyebrow: "Privacy-first RAG",
     ownership: [
-        "Product concept & use cases" +
-        "Hybrid retrieval architecture" +
-        "Grounding & evidence gating" +
-        "RAG evaluation"
+      "Product concept & use cases",
+      "Hybrid retrieval architecture",
+      "Grounding & evidence gating",
+      "RAG evaluation",
     ],
   },
   {

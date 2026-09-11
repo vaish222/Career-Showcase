@@ -248,14 +248,15 @@ export default function Home() {
 
             <div className="grid gap-6">
             {shippedProjects.map((project) => (
-              <motion.div
+              <motion.a
                 key={project.id}
+                href={project.link}
+                target="_blank"
+                rel="noreferrer"
+                aria-label={`View ${project.title}`}
                 variants={itemVariants}
-                className="group relative rounded-2xl bg-card border border-card-border hover:border-primary/50 transition-colors overflow-hidden"
+                className="group block relative rounded-2xl bg-card border border-card-border hover:border-primary/50 focus-visible:border-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/50 transition-colors overflow-hidden cursor-pointer"
               >
-                {project.link && (
-                  <a href={project.link} target="_blank" rel="noreferrer" className="absolute inset-0 z-10 rounded-2xl" aria-label={`View ${project.title}`} />
-                )}
                 <div className="grid md:grid-cols-[2fr_1fr] gap-0">
                   <div className="p-10 md:p-12">
                     <div className="flex items-center gap-3 mb-6">
@@ -296,7 +297,7 @@ export default function Home() {
                     </ul>
                   </div>
                 </div>
-              </motion.div>
+              </motion.a>
             ))}
             </div>
           </motion.div>
