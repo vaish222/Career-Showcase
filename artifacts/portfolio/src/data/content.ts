@@ -36,8 +36,19 @@ export const projects = [
     status: "Launched" as const,
     tags: ["Product Strategy", "AI/LLM", "Multi-Agent", "PRD", "Prototyping"],
     impact: "FWA AI Hackathon Winner — 1st place",
-    year: "2024",
+    year: "2026",
     link: "https://careerfolio-fwa.lovable.app/",
+  },
+  {
+    id: 2,
+    title: "Pantry to Plan",
+    description:
+        "Turn a pantry photo into a 3 to 5 day dinner plan and a consolidated shopping list. The application combines image-based ingredient detection, a human review step, preference-aware recipe planning, pantry depletion, and shopping-list aggregation in one Streamlit workflow.",
+    status: "Launched" as const,
+    tags: ["Product Decisions", "Vision Parsing", "StreamLit", "Persistence", "LangSmith", "HITL"],
+    impact: "The Gen Academy Demo day Winner - 1st Place",
+    year: "2026",
+    link: "https://github.com/ericsu13/pantry-to-plan",
   },
   {
     id: 2,
@@ -47,7 +58,6 @@ export const projects = [
     status: "Launched" as const,
     tags: ["Enterprise Platform", "Java", "Cross-functional Delivery", "Vendor Management"],
     impact: "~$70K+ annual operational savings · Zero-incident rollout",
-    year: "2023",
     link: null,
   },
   {
@@ -58,7 +68,6 @@ export const projects = [
     status: "Launched" as const,
     tags: ["AWS Lambda", "Snowflake", "Tableau", "Data Engineering"],
     impact: "70% reduction in manual reporting effort",
-    year: "2022",
     link: null,
   },
   {
@@ -69,7 +78,7 @@ export const projects = [
     status: "In Progress" as const,
     tags: ["AI Agents", "Mentorship", "Product Leadership", "LLM"],
     impact: "Multiple teams shipped working AI prototypes",
-    year: "2024",
+    year: "2026",
     link: null,
   },
   {
@@ -80,7 +89,6 @@ export const projects = [
     status: "Launched" as const,
     tags: ["Java", "JPA", "Docker", "CI/CD", "Platform Migration"],
     impact: "Reduced application deployment time by over 90%, from 1–2 hours to under 5 minutes.",
-    year: "2021",
     link: null,
   },
   {
@@ -91,7 +99,6 @@ export const projects = [
     status: "Launched" as const,
     tags: ["Product Discovery", "UX Mockups", "Compliance", "API Design"],
     impact: "Streamlined state-filing process across multiple markets",
-    year: "2023",
     link: null,
   },
 ];
@@ -157,25 +164,6 @@ export const shippedProjects = [
     ownership: [
       "Product requirements",
       "Workflow & agent boundaries (multi agent)",
-      "Risk/escalation design",
-      "Human-in-the-loop controls",
-      "Evaluation framework",
-    ],
-  },
-  {
-    id: 10,
-    title: "Pantry to Plan",
-    description:
-        "Turn a pantry photo into a 3 to 5 day dinner plan and a consolidated shopping list. The application combines image-based ingredient detection, a human review step, preference-aware recipe planning, pantry depletion, and shopping-list aggregation in one Streamlit workflow.",
-    status: "Launched" as const,
-    tags: ["Product Decisions", "Vision Parsing", "StreamLit", "Persistence", "LangSmith", "HITL"],
-    impact: "Pantry to Plan converts a pantry photo into a three to five day dinner plan and a consolidated shopping list",
-    year: "2026",
-    link: "https://github.com/ericsu13/pantry-to-plan",
-    eyebrow: "Agentic Operations",
-    ownership: [
-      "Product requirements",
-      "Multi agent and MCP",
       "Risk/escalation design",
       "Human-in-the-loop controls",
       "Evaluation framework",
