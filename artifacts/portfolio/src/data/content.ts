@@ -76,10 +76,10 @@ export const projects = [
     id: 5,
     title: "Legacy Platform Modernization",
     description:
-      "Architected and led modernization of a 20+ year legacy insurance platform, eliminating 40K+ lines of DAO code through JPA migration. Spearheaded Java 11/17, Docker, GitHub, RHEL, and CI/CD adoption across the organization.",
+      "Architected and led modernization of a 20+ year legacy order printing fulfillment platform, eliminating 40K+ lines of DAO code through JPA migration. Spearheaded Java 11/17, Docker, GitHub, RHEL, and CI/CD adoption across the team.",
     status: "Launched" as const,
     tags: ["Java", "JPA", "Docker", "CI/CD", "Platform Migration"],
-    impact: "60% reduction in deployment effort · zero critical downtime",
+    impact: "Reduced application deployment time by over 90%, from 1–2 hours to under 5 minutes.",
     year: "2021",
     link: null,
   },
@@ -157,6 +157,25 @@ export const shippedProjects = [
     ownership: [
       "Product requirements",
       "Workflow & agent boundaries (multi agent)",
+      "Risk/escalation design",
+      "Human-in-the-loop controls",
+      "Evaluation framework",
+    ],
+  },
+  {
+    id: 10,
+    title: "Pantry to Plan",
+    description:
+        "Turn a pantry photo into a 3 to 5 day dinner plan and a consolidated shopping list. The application combines image-based ingredient detection, a human review step, preference-aware recipe planning, pantry depletion, and shopping-list aggregation in one Streamlit workflow.",
+    status: "Launched" as const,
+    tags: ["Product Decisions", "Vision Parsing", "StreamLit", "Persistence", "LangSmith", "HITL"],
+    impact: "Pantry to Plan converts a pantry photo into a three to five day dinner plan and a consolidated shopping list",
+    year: "2026",
+    link: "https://github.com/ericsu13/pantry-to-plan",
+    eyebrow: "Agentic Operations",
+    ownership: [
+      "Product requirements",
+      "Multi agent and MCP",
       "Risk/escalation design",
       "Human-in-the-loop controls",
       "Evaluation framework",
