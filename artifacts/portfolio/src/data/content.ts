@@ -41,17 +41,6 @@ export const projects = [
   },
   {
     id: 2,
-    title: "Pantry to Plan",
-    description:
-        "Turn a pantry photo into a 3 to 5 day dinner plan and a consolidated shopping list. The application combines image-based ingredient detection, a human review step, preference-aware recipe planning, pantry depletion, and shopping-list aggregation in one Streamlit workflow.",
-    status: "Launched" as const,
-    tags: ["Product Decisions", "Vision Parsing", "StreamLit", "Persistence", "LangSmith", "HITL"],
-    impact: "The Gen Academy Demo day Winner - 1st Place",
-    year: "2026",
-    link: "https://github.com/ericsu13/pantry-to-plan",
-  },
-  {
-    id: 2,
     title: "Enterprise Print Modernization",
     description:
       "Led the modernization of a high-visibility enterprise print workflow, translating business and operational requirements into architecture, implementation, testing, vendor coordination, and production rollout.",
@@ -104,6 +93,24 @@ export const projects = [
 ];
 
 export const shippedProjects = [
+  {
+    id: 10,
+    title: "Pantry to Plan",
+    description:
+        "Turn a pantry photo into a 3 to 5 day dinner plan and a consolidated shopping list. The application combines image-based ingredient detection, a human review step, preference-aware recipe planning, pantry depletion, and shopping-list aggregation in one Streamlit workflow.",
+    status: "Launched" as const,
+    tags: ["Product Decisions", "Vision Parsing", "StreamLit", "Persistence", "LangSmith", "HITL"],
+    impact: "The Gen Academy Demo day Winner - 1st Place",
+    year: "2026",
+    link: "https://github.com/ericsu13/pantry-to-plan",
+    eyebrow: "0→1 product",
+    ownership: [
+      "Image-based ingredient detection",
+      "Human review step",
+      "Preference-aware recipe planning",
+      "Pantry depletion & shopping-list aggregation",
+    ],
+  },
   {
     ...projects[0],
     eyebrow: "0→1 AI product",
