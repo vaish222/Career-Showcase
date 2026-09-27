@@ -481,7 +481,6 @@ export default function Home() {
                 >
                   <div>
                     <div className="flex items-center gap-4 text-xs font-mono text-muted-foreground mb-4">
-                      <span className="flex items-center gap-1.5"><Calendar size={12}/> {post.date}</span>
                       <span className="flex items-center gap-1.5"><Clock size={12}/> {post.readTime}</span>
                     </div>
                     <h4 className="text-xl font-bold mb-3 text-foreground">
