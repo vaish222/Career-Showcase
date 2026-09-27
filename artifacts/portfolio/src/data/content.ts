@@ -16,8 +16,8 @@ export const personal = {
   availabilityTags: ["Open to Technical PM & AI Product roles"],
   stats: [
     { value: "15+", label: "Years in Enterprise Technology" },
-    { value: "6", label: "Major Products & Platforms Shipped" },
-    { value: "1st place", label: "FWA AI Hackathon" },
+    { value: "5", label: "Major Products & Platforms Shipped" },
+    { value: "1st place", label: "FWA AI Hackathon and The Gen Academy's - Mastering Agentic AI - Demo day winner" },
     { value: "$70K", label: "Annual Savings Delivered" },
   ],
   bio: `I'm a Senior Software Engineer with 15+ years of experience building and modernizing enterprise applications across insurance and transportation.
@@ -278,9 +278,9 @@ export const education = [
   },
   {
     institution: "Certifications & AI Credentials",
-    degree: "FWA AI Hackathon Winner · Google 5-Day AI Agents Intensive · AWS Scholars Program (AI Productivity App)",
+    degree: "Mastering Agentic AI: Certification by The Gen Academy· Google 5-Day AI Agents Intensive · AWS AI Practitioner Challenge",
     period: "",
-    notes: "Also: Claude Code in Action · Introduction to MCP · Sun Certified Java Developer (SCJP) · Machine Learning Specialization (DeepLearning.AI) · RAG with LangChain",
+    notes: "Also: Claude Code in Action · Introduction to MCP · Claude 101 · Machine Learning Specialization (DeepLearning.AI) · RAG with LangChain (DataCamp) · FWA AI launchpad",
   },
 ];
 
