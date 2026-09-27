@@ -238,7 +238,7 @@ export default function Home() {
           >
             <div className="mb-12 text-center">
               <h3 className="text-4xl md:text-5xl font-bold mb-4">
-                Products I Built From{" "}
+                From Idea to Working Product: {" "} Builds
                 <span className="text-primary">0 → 1.</span>
               </h3>
               <p className="text-lg text-muted-foreground max-w-2xl mx-auto font-light">
