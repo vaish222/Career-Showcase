@@ -131,16 +131,6 @@ export const shippedProjects = [
     ],
   },
   {
-    ...projects[0],
-    eyebrow: "0→1 AI product",
-    ownership: [
-      "Product strategy & PRD",
-      "System design (HLD + LLD)",
-      "Execution & delivery",
-      "Multi-agent AI prototyping",
-    ],
-  },
-  {
     id: 9,
     title: "CareerFolio — AI Career Intelligence Platform",
     description:
@@ -195,7 +185,7 @@ export const shippedProjects = [
     ],
   },
   {
-    id: 12,
+    id: 13,
     title: "StayOps AI",
     description:
       "Designed an AI operations manager that prioritizes work across eight properties while explicitly separating recommendations from consequential actions requiring human approval.",
