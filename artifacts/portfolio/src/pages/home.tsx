@@ -3,7 +3,11 @@ import { SiGithub } from "react-icons/si";
 import { ArrowDown, Calendar, Clock, ArrowUpRight, Linkedin, Mail } from "lucide-react";
 import { personal, projects, shippedProjects, skills, experience, education, blogPosts } from "@/data/content";
 import { Navbar } from "@/components/navbar";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { Link } from "wouter";
+import { caseStudyByTitle } from "@/data/case-studies";
+import { ExpandableDescription } from "@/components/expandable-description";
+import { PageMeta } from "@/components/page-meta";
 
 // Animation Variants
 const sectionVariants = {
@@ -18,6 +22,16 @@ const sectionVariants = {
 const itemVariants = {
   hidden: { opacity: 0, y: 20 },
   visible: { opacity: 1, y: 0, transition: { duration: 0.5, ease: "easeOut" as const } }
+};
+
+const selectedWorkPreviews: Record<number, string> = {
+  6: "Built serverless data pipelines to automate enterprise reporting across teams.",
+  7: "Translated customer-review data needs into implementation-ready technical requirements.",
+};
+
+const shippedPreviews: Record<number, string> = {
+  11: "Built a RAG assistant grounded in family source documents.",
+  13: "Designed an AI operations manager that prioritizes work across eight properties.",
 };
 
 // Profile photo with initials fallback
@@ -41,8 +55,16 @@ function ProfilePhoto() {
 }
 
 export default function Home() {
+  useEffect(() => {
+    const section = window.location.hash.slice(1);
+    if (section === "projects" || section === "shipped") {
+      requestAnimationFrame(() => document.getElementById(section)?.scrollIntoView());
+    }
+  }, []);
+
   return (
     <div className="min-h-screen bg-background text-foreground selection:bg-primary/30">
+      <PageMeta title="Vaishali Goel | Product Manager, Engineering & AI" description={personal.tagline} />
       <Navbar />
       
       <main>
@@ -190,7 +212,6 @@ export default function Home() {
                       <h4 className="text-xl font-bold text-foreground">
                         {project.title}
                       </h4>
-                      {project.link && <ArrowUpRight className="text-muted-foreground group-hover:text-primary transition-colors shrink-0 mt-0.5" size={20} />}
                     </div>
                     <div className="mb-6">
                       <span className={`inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium border ${
@@ -200,11 +221,13 @@ export default function Home() {
                       }`}>
                         {project.status}
                       </span>
-                      <span className="ml-3 text-sm text-muted-foreground font-mono">{project.year}</span>
+                      {"year" in project && project.year && <span className="ml-3 text-sm text-muted-foreground font-mono">{project.year}</span>}
                     </div>
-                    <p className="text-muted-foreground mb-6 line-clamp-3">
-                      {project.description}
-                    </p>
+                    {caseStudyByTitle.has(project.title) ? (
+                      <p className="text-muted-foreground mb-6 leading-relaxed">{caseStudyByTitle.get(project.title)!.overview}</p>
+                    ) : (
+                      <ExpandableDescription description={project.description} preview={selectedWorkPreviews[project.id]} className="mb-6" />
+                    )}
                   </div>
                   
                   <div>
@@ -218,10 +241,15 @@ export default function Home() {
                         </span>
                       ))}
                     </div>
+                    {caseStudyByTitle.get(project.title) && (
+                      <Link
+                        href={`/work/${caseStudyByTitle.get(project.title)!.slug}`}
+                        className="inline-flex items-center mt-6 text-sm font-medium text-primary hover:underline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-primary"
+                      >
+                        View case study →
+                      </Link>
+                    )}
                   </div>
-                  {project.link && (
-                    <a href={project.link} className="absolute inset-0 z-10 rounded-2xl" target="_blank" rel="noreferrer" aria-label={`View ${project.title}`} />
-                  )}
                 </motion.div>
               ))}
             </div>
@@ -248,14 +276,10 @@ export default function Home() {
 
             <div className="grid gap-6">
             {shippedProjects.map((project) => (
-              <motion.a
+              <motion.div
                 key={project.id}
-                href={project.link}
-                target="_blank"
-                rel="noreferrer"
-                aria-label={`View ${project.title}`}
                 variants={itemVariants}
-                className="group block relative rounded-2xl bg-card border border-card-border hover:border-primary/50 focus-visible:border-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/50 transition-colors overflow-hidden cursor-pointer"
+                className="group block relative rounded-2xl bg-card border border-card-border hover:border-primary/50 transition-colors overflow-hidden"
               >
                 <div className="grid md:grid-cols-[2fr_1fr] gap-0">
                   <div className="p-10 md:p-12">
@@ -272,15 +296,27 @@ export default function Home() {
                     <h4 className="text-2xl md:text-3xl font-bold text-foreground mb-4">
                       {project.title}
                     </h4>
-                    <p className="text-muted-foreground text-lg leading-relaxed mb-8">
-                      {project.description}
-                    </p>
+                    {caseStudyByTitle.has(project.title) ? (
+                      <p className="text-muted-foreground text-lg leading-relaxed mb-8">{caseStudyByTitle.get(project.title)!.overview}</p>
+                    ) : (
+                      <ExpandableDescription description={project.description} preview={shippedPreviews[project.id]} details={project.ownership} className="text-lg mb-8" />
+                    )}
                     <div className="flex flex-wrap gap-2 mb-8">
                       {project.tags.map(tag => (
                         <span key={tag} className="text-xs px-2 py-1 bg-muted/50 rounded-md text-muted-foreground">
                           {tag}
                         </span>
                       ))}
+                    </div>
+                    <div className="flex flex-wrap items-center gap-5">
+                      {caseStudyByTitle.get(project.title) && (
+                        <Link href={`/work/${caseStudyByTitle.get(project.title)!.slug}`} className="text-sm font-medium text-primary hover:underline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-primary">
+                          View case study →
+                        </Link>
+                      )}
+                      <a href={project.link} target="_blank" rel="noreferrer" className="text-sm font-medium text-primary hover:underline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-primary">
+                        Visit project ↗
+                      </a>
                     </div>
                   </div>
                   <div className="md:border-l border-border/50 flex flex-col justify-center p-10 bg-muted/10">
@@ -297,7 +333,7 @@ export default function Home() {
                     </ul>
                   </div>
                 </div>
-              </motion.a>
+              </motion.div>
             ))}
             </div>
           </motion.div>

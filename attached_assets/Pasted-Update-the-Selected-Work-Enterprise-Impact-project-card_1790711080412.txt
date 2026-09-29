@@ -1,0 +1,74 @@
+Update the Selected Work / Enterprise Impact project cards in my portfolio.
+Current issue: some project descriptions are truncated with .... I do not want the text to look accidentally cut off.
+Keep the current visual design, dark theme, spacing, card styling, colors, typography, tags, and overall layout. Do not redesign the site.
+For major projects, replace the truncated description behavior with this structure:
+1. Show a short, complete 1–2 sentence summary on the card.
+2. Add a text link/button at the bottom of the card:
+   View case study →
+3. Clicking View case study → should open a dedicated case-study page for that project.
+4. Do not use flip cards.
+5. Make the interaction responsive and accessible on desktop and mobile.
+Create dedicated case-study pages for these major projects:
+- Enterprise Print Modernization
+- Centralized Work Intake
+- State-Filing Compliance Experience
+- CareerFolio — AI Career Intelligence Platform
+- Pantry to Plan
+Each case-study page should use the same visual style as the current portfolio and include:
+- Project title
+- Status
+- Short overview
+- The Problem
+- My Role
+- How I Approached It
+- Key Product Decisions
+- Technical / System Context
+- Outcome / Impact
+- What I Learned
+- Skills/tags
+- A clear Back to Work link
+For smaller technical projects, instead of creating a new page, add a Read more ↓ interaction that expands the card inline. The expanded content should push the cards below it down naturally rather than overlaying content.
+For the existing Enterprise Print Modernization card, replace the truncated text with this complete preview:
+Led product and technical delivery for an enterprise print transformation spanning discovery, requirements, vendor integration, testing, and production rollout.
+Keep this impact line:
+Impact: ~$1.5M estimated annual savings
+Keep these tags:
+Product Strategy
+Cross-functional Delivery
+Vendor Management
+Technical Solution
+Add:
+View case study →
+Build the Enterprise Print Modernization case-study page first using the following content structure:
+The Problem
+Print volumes were declining while fixed operational costs remained high. The organization also faced an upcoming facility transition and needed to determine whether continuing internal print operations was sustainable.
+My Role
+Led product and technical delivery across discovery, requirements, solution design, engineering coordination, vendor integration, testing, and production rollout.
+How I Approached It
+Worked across business leaders, operations, engineering, QA, managers, directors, and the external vendor to understand business constraints, technical dependencies, and transition risks. Helped define the requirements and rollout approach while ensuring existing print workflows could continue during migration.
+Key Product Decisions
+- Balance business continuity with migration speed
+- Support existing internal printing until vendor workflows were ready
+- Define integration and testing requirements across environments
+- Coordinate dependencies across internal teams and Fiserv
+Outcome / Impact
+Supported an enterprise transformation estimated to deliver ~$1.5M in annual savings while moving the organization from a largely fixed-cost print model toward a variable-cost model.
+What I Learned
+Large product decisions are rarely purely technical. The right solution has to balance customer needs, operational risk, economics, technical feasibility, and organizational change.
+Important implementation requirements:
+- Do not change the current homepage layout or design system.
+- Do not add unnecessary animations.
+- Do not use a card-flip interaction.
+- Keep transitions subtle and professional.
+- Preserve responsive behavior.
+- Preserve all existing content unless specifically changed above.
+- Make each case-study URL shareable, for example:
+  /work/enterprise-print-modernization
+- Add metadata/title tags for each case study so the pages are recruiter-friendly and shareable.
+- If the site already uses React routing, reuse the existing routing approach instead of introducing a new framework.
+- Make the reusable case-study layout data-driven so I can easily add more projects later.
+
+I’d also add one final sentence to Replit AI:
+Before making changes, inspect the existing project structure and reuse the current components/styles where possible. Do not rewrite the app from scratch.
+
+That instruction is important because Replit AI sometimes over-edits a working design.
