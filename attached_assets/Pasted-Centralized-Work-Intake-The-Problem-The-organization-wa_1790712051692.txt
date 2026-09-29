@@ -1,0 +1,20 @@
+Centralized Work Intake
+The Problem
+The organization wanted a centralized intake process where users could submit work through a form and have Workfront Fusion automatically create the appropriate JIRA epics and stories. The challenge was that the business teams themselves were still determining what the form, workflow, field mappings, and MVP should look like.
+My Role
+Led product discovery and requirements definition across multiple business teams and translated an ambiguous idea into an implementation-ready workflow for engineering.
+How I Approached It
+Rather than waiting for requirements to become finalized, I created structure around the ambiguity. I held working sessions with stakeholders, mapped the process visually in Visio, and used the flow to expose missing decisions, dependencies, and open questions.
+I separated MVP needs from future enhancements and maintained a Confluence page containing the current state, proposed future state, decisions, field mappings, assumptions, and unresolved questions.
+Key Product Decisions
+- Define the minimum information required for the initial intake form
+- Separate MVP requirements from future enhancements
+- Determine how form fields map into JIRA epics and stories
+- Clarify which decisions belonged to the business versus the integration layer
+- Establish one shared source of truth for requirements and open questions
+Technical / System Context
+Workfront, Workfront Fusion, JIRA, workflow automation, field mappings, Visio process diagrams, and Confluence documentation.
+Outcome / Impact
+Created a developer-ready definition of a workflow operating within a Workfront ecosystem supporting approximately 590 users and 22K projects annually. The documentation gave business and engineering teams a common understanding of what needed to be built and reduced ambiguity before implementation.
+What I Learned
+Ambiguity becomes manageable once assumptions and unanswered questions are made visible. Visual workflows were especially effective because stakeholders could react to something concrete rather than trying to agree on an abstract process.
