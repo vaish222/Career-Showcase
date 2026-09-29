@@ -19,7 +19,12 @@ export type CaseStudy = {
 
 const print = projects[0];
 const intake = projects[1];
+const legacy = projects[2];
 const compliance = projects[3];
+const warehouse = projects[4];
+const reporting = projects[5];
+const integration = projects[6];
+const mentoring = projects[7];
 const pantry = shippedProjects[0];
 const career = shippedProjects[1];
 
@@ -67,6 +72,25 @@ export const caseStudies: CaseStudy[] = [
     section: "projects",
   },
   {
+    slug: "legacy-platform-modernization",
+    title: legacy.title,
+    status: legacy.status,
+    overview: "Architected and led modernization of a 20+ year legacy order printing fulfillment platform, eliminating 40K+ lines of DAO code through JPA migration.",
+    problem: "A 20+ year legacy order printing fulfillment platform needed modernization, including its large DAO codebase and slow deployment process.",
+    role: "Architected and led the platform modernization and spearheaded the team's adoption of newer development and delivery tools.",
+    approach: "Migrated over 40K lines of DAO code to JPA and introduced Java 11/17, Docker, GitHub, RHEL, and CI/CD across the team.",
+    decisions: [
+      "Move data access from DAO code to JPA",
+      "Adopt Java 11/17 and updated development tooling",
+      "Introduce CI/CD to improve application deployment",
+    ],
+    technicalContext: "Legacy order printing fulfillment platform, Java 11/17, JPA, Docker, GitHub, RHEL, and CI/CD.",
+    impact: legacy.impact,
+    learned: "Modernizing a long-lived platform means improving both its codebase and the way the team delivers changes.",
+    tags: legacy.tags,
+    section: "projects",
+  },
+  {
     slug: "state-filing-compliance-experience",
     title: compliance.title,
     status: compliance.status,
@@ -85,6 +109,82 @@ export const caseStudies: CaseStudy[] = [
     impact: "Simplified regulatory-rule review and improved visibility, usability, and auditability by moving users away from a fragmented spreadsheet-driven workflow.",
     learned: "Technical integration is only part of a product solution. Translating system-level data into terminology and interactions users actually understand can create just as much value as the underlying API work.",
     tags: compliance.tags,
+    section: "projects",
+  },
+  {
+    slug: "warehouse-application-portfolio-strategy",
+    title: warehouse.title,
+    status: warehouse.status,
+    overview: "Helped shape the roadmap for ~10 warehouse applications by evaluating which systems should be retired, maintained, or modernized.",
+    problem: "A portfolio of roughly 10 warehouse applications required priorities for retirement, maintenance, and modernization.",
+    role: "Helped shape the application portfolio roadmap and evaluate the options for each system.",
+    approach: "Considered technical condition, supportability, business needs, and future-state requirements to guide portfolio priorities.",
+    decisions: [
+      "Evaluate applications for retirement, maintenance, or modernization",
+      "Balance technical condition with business needs",
+      "Use supportability and future-state considerations to guide priorities",
+    ],
+    technicalContext: "A portfolio of approximately 10 warehouse applications, assessed for technical condition and supportability.",
+    impact: warehouse.impact,
+    learned: "Portfolio priorities need to account for both current supportability and future business needs.",
+    tags: warehouse.tags,
+    section: "projects",
+  },
+  {
+    slug: "cloud-native-reporting-pipeline",
+    title: reporting.title,
+    status: reporting.status,
+    overview: "Built serverless data pipelines to automate enterprise reporting across teams.",
+    problem: "Enterprise reporting workflows required significant manual effort across multiple teams.",
+    role: "Designed and built serverless data pipelines to automate those workflows.",
+    approach: "Used AWS Lambda, S3, Snowflake, and Tableau to automate the movement and presentation of reporting data.",
+    decisions: [
+      "Use serverless data pipelines for reporting automation",
+      "Connect AWS Lambda, S3, Snowflake, and Tableau in the reporting workflow",
+      "Reduce manual work across teams",
+    ],
+    technicalContext: "AWS Lambda, S3, Snowflake, Tableau, and enterprise reporting workflows.",
+    impact: reporting.impact,
+    learned: "Automating repetitive reporting work can free teams from manual steps across the workflow.",
+    tags: reporting.tags,
+    section: "projects",
+  },
+  {
+    slug: "technical-architecture-and-integration",
+    title: integration.title,
+    status: integration.status,
+    overview: "Translated customer-review data needs into implementation-ready technical requirements.",
+    problem: "Upstream customer-review data needed a clear technical path into engineering implementation.",
+    role: "Defined the technical requirements for database and MuleSoft API integration.",
+    approach: "Translated upstream data needs into implementation-ready requirements for engineering delivery.",
+    decisions: [
+      "Define the database integration requirements",
+      "Specify the MuleSoft API integration needed for delivery",
+      "Make the handoff from business requirements to engineering clearer",
+    ],
+    technicalContext: "Upstream customer-review data, database design, and MuleSoft API integration.",
+    impact: integration.impact,
+    learned: "Specific integration requirements help bridge business intent and engineering implementation.",
+    tags: integration.tags,
+    section: "projects",
+  },
+  {
+    slug: "ai-project-mentor-future-world-alliance",
+    title: mentoring.title,
+    status: mentoring.status,
+    overview: "Mentoring teams building AI Launchpad, knowledge-bot, and automation-workflow projects.",
+    problem: "Teams building AI prototypes needed guidance on solution design, engineering choices, and delivery planning.",
+    role: "Mentor teams on product and technical direction and help establish their project execution structure.",
+    approach: "Guide solution design and engineering choices, establish JIRA and project execution structure, and help teams translate ideas into actionable delivery plans.",
+    decisions: [
+      "Establish a JIRA and project execution structure",
+      "Guide solution design and engineering choices",
+      "Translate ideas into actionable delivery plans",
+    ],
+    technicalContext: "AI Launchpad, knowledge-bot, and automation-workflow projects involving AI agents, LLMs, and RAG.",
+    impact: mentoring.impact,
+    learned: "Clear execution structure helps teams turn AI project ideas into working prototypes.",
+    tags: mentoring.tags,
     section: "projects",
   },
   {

@@ -24,11 +24,6 @@ const itemVariants = {
   visible: { opacity: 1, y: 0, transition: { duration: 0.5, ease: "easeOut" as const } }
 };
 
-const selectedWorkPreviews: Record<number, string> = {
-  6: "Built serverless data pipelines to automate enterprise reporting across teams.",
-  7: "Translated customer-review data needs into implementation-ready technical requirements.",
-};
-
 const shippedPreviews: Record<number, string> = {
   11: "Built a RAG assistant grounded in family source documents.",
   13: "Designed an AI operations manager that prioritizes work across eight properties.",
@@ -223,11 +218,7 @@ export default function Home() {
                       </span>
                       {"year" in project && project.year && <span className="ml-3 text-sm text-muted-foreground font-mono">{project.year}</span>}
                     </div>
-                    {caseStudyByTitle.has(project.title) ? (
-                      <p className="text-muted-foreground mb-6 leading-relaxed">{caseStudyByTitle.get(project.title)!.overview}</p>
-                    ) : (
-                      <ExpandableDescription description={project.description} preview={selectedWorkPreviews[project.id]} className="mb-6" />
-                    )}
+                    <p className="text-muted-foreground mb-6 leading-relaxed">{caseStudyByTitle.get(project.title)!.overview}</p>
                   </div>
                   
                   <div>
@@ -241,14 +232,12 @@ export default function Home() {
                         </span>
                       ))}
                     </div>
-                    {caseStudyByTitle.get(project.title) && (
-                      <Link
-                        href={`/work/${caseStudyByTitle.get(project.title)!.slug}`}
-                        className="inline-flex items-center mt-6 text-sm font-medium text-primary hover:underline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-primary"
-                      >
-                        View case study →
-                      </Link>
-                    )}
+                    <Link
+                      href={`/work/${caseStudyByTitle.get(project.title)!.slug}`}
+                      className="inline-flex items-center mt-6 text-sm font-medium text-primary hover:underline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-primary"
+                    >
+                      View case study →
+                    </Link>
                   </div>
                 </motion.div>
               ))}
