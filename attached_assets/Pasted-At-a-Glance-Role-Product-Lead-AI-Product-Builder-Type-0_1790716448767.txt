@@ -1,0 +1,62 @@
+At a Glance
+Role: Product Lead / AI Product Builder
+Type: 0→1 AI Product
+Impact: The Gen Academy Mastering Agentic AI Demo Day — 1st Place
+Core Stack: OpenAI · Pinecone · Python · Streamlit · LangSmith · Human-in-the-Loop
+The Problem
+Meal planning sounds simple until it has to account for what someone already has, dietary constraints, cuisine preferences, calorie goals, pantry depletion, and a shopping list that is actually correct.
+I wanted to explore whether AI could reduce that planning overhead without creating a system that simply generated plausible-looking recipes.
+The product goal became: turn a pantry photo into a trustworthy 3–5 day dinner plan and a consolidated shopping list, while keeping the user in control of what the system detected and ensuring important constraints were enforced reliably.    README (1)
+My Role
+I designed and built the product end to end, including:
+- product workflow and interaction model
+- pantry-image parsing
+- human confirmation
+- recipe retrieval
+- planning and scoring logic
+- hard dietary constraints
+- pantry depletion
+- shopping-list reconciliation
+- AI-assisted planning
+- evaluation strategy
+How I Approached It
+I broke the experience into four clear steps:
+Pantry photo → confirm inventory → set preferences → generate plan + shopping list
+A key decision was not to trust vision output automatically. After image parsing, users review the detected ingredients, confidence, mapping status, and quantities before anything enters the planner. Low-confidence or incomplete detections are explicitly surfaced for review.    README (1)
+I also separated what AI should do from what needed to remain deterministic.
+AI is useful for:
+- understanding pantry images
+- retrieving relevant recipe candidates
+- proposing planning strategies
+But exact eligibility, scoring, pantry arithmetic, hard vegetarian constraints, and shopping-list reconciliation remain deterministic in Python. The governing design principle became:
+“Agent proposes, deterministic core disposes.”    README (1)
+Key Product Decisions
+- Require human confirmation before using AI-detected pantry items
+- Treat vegetarian preference as a hard constraint, never something the model can relax
+- Use retrieval to narrow the recipe space, but keep the typed recipe corpus as the source of truth
+- Separate AI recommendations from deterministic inventory and scoring logic
+- Make constraint misses and fallbacks visible instead of silently hiding them
+- Preserve a fully local deterministic mode so the product can still run without external AI services
+Technical / System Context
+The architecture combines:
+- GPT-4o for image understanding and structured output
+- Pinecone + embeddings for recipe retrieval
+- TF-IDF local retrieval as a deterministic fallback
+- Python for scoring, constraints, pantry depletion, and shopping-list calculations
+- Streamlit session state for the active workflow
+- strict Pydantic schemas for contracts across the system    README (1)
+The planner retrieves recipe candidates based on pantry state and preferences, then scores them using cuisine match, calorie distance, pantry coverage, and recipe reuse. Pantry quantities are updated after each planned meal before generating the next day.    README (1)
+Evaluation & Trust
+I did not want success to mean “the demo looks good.”
+The project includes 23 evaluation scenarios covering normal cases, vegetarian exhaustion, tight calorie bands, sparse pantries, join mismatches, sizing edge cases, and noisy vision inputs. The suite checks deterministic invariants such as hard-constraint compliance, pantry quantities never going negative, exact calorie deltas, and valid shopping-list shortages.    README (1)
+Outcome / Impact
+The result was an explainable end-to-end planning experience that combines AI where it adds value with deterministic logic where correctness matters.
+The project won 1st place at The Gen Academy Mastering Agentic AI Demo Day.
+More importantly, it gave me a practical framework for building trustworthy AI products rather than simply adding an LLM to an existing workflow.
+What I Learned
+The biggest lesson was that AI does not need to control the entire workflow to create value.
+For consequential or constraint-heavy decisions, the stronger architecture is often hybrid:
+AI for interpretation and exploration.
+Deterministic systems for rules and arithmetic.
+Humans for confirmation and judgment.
+That separation made the product easier to explain, evaluate, debug, and trust.

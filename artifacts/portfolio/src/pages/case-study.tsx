@@ -39,24 +39,45 @@ export default function CaseStudyPage() {
           <p className="text-lg md:text-xl text-muted-foreground leading-relaxed mt-8">{study.overview}</p>
         </header>
         <div className="bg-card rounded-2xl border border-card-border p-8 md:p-12">
-          {sections.slice(0, 3).map(([heading, text]) => (
-            <section key={heading} className="mb-10">
-              <h2 className="text-xl font-bold mb-3">{heading}</h2>
-              <p className="text-muted-foreground leading-relaxed">{text}</p>
-            </section>
-          ))}
-          <section className="mb-10">
-            <h2 className="text-xl font-bold mb-3">Key Product Decisions</h2>
-            <ul className="space-y-3 text-muted-foreground list-disc pl-5">
-              {study.decisions.map((decision) => <li key={decision}>{decision}</li>)}
-            </ul>
-          </section>
-          {sections.slice(3).map(([heading, text]) => (
-            <section key={heading} className="mb-10">
-              <h2 className="text-xl font-bold mb-3">{heading}</h2>
-              <p className="text-muted-foreground leading-relaxed">{text}</p>
-            </section>
-          ))}
+          {study.detailSections ? (
+            study.detailSections.map((section) => (
+              <section key={section.heading} className="mb-10">
+                <h2 className="text-xl font-bold mb-3">{section.heading}</h2>
+                <div className="space-y-4 text-muted-foreground leading-relaxed">
+                  {section.blocks.map((block, index) =>
+                    typeof block === "string" ? (
+                      <p key={index}>{block}</p>
+                    ) : (
+                      <ul key={index} className="space-y-2 list-disc pl-5">
+                        {block.map((item) => <li key={item}>{item}</li>)}
+                      </ul>
+                    )
+                  )}
+                </div>
+              </section>
+            ))
+          ) : (
+            <>
+              {sections.slice(0, 3).map(([heading, text]) => (
+                <section key={heading} className="mb-10">
+                  <h2 className="text-xl font-bold mb-3">{heading}</h2>
+                  <p className="text-muted-foreground leading-relaxed">{text}</p>
+                </section>
+              ))}
+              <section className="mb-10">
+                <h2 className="text-xl font-bold mb-3">Key Product Decisions</h2>
+                <ul className="space-y-3 text-muted-foreground list-disc pl-5">
+                  {study.decisions.map((decision) => <li key={decision}>{decision}</li>)}
+                </ul>
+              </section>
+              {sections.slice(3).map(([heading, text]) => (
+                <section key={heading} className="mb-10">
+                  <h2 className="text-xl font-bold mb-3">{heading}</h2>
+                  <p className="text-muted-foreground leading-relaxed">{text}</p>
+                </section>
+              ))}
+            </>
+          )}
           <section>
             <h2 className="text-xl font-bold mb-4">Skills / Tags</h2>
             <div className="flex flex-wrap gap-2">
