@@ -217,6 +217,146 @@ export const caseStudies: CaseStudy[] = [
     tags: career.tags,
     section: "shipped",
     externalLink: career.link,
+    detailSections: [
+      {
+        heading: "At a Glance",
+        blocks: [[
+          "Role: Product Creator / Strategy & AI Product Lead",
+          "Type: 0→1 AI Product",
+          "Impact: FWA AI Hackathon Winner — 1st Place",
+          "Core Concept: Resume → Mirror · Map · Motion",
+          "Architecture: Eight-agent AI workflow",
+        ]],
+      },
+      {
+        heading: "The Problem",
+        blocks: [
+          "The original idea was to create an AI portfolio builder.",
+          "But during discovery, I realized the deeper problem was not that professionals lacked tools for creating portfolio websites.",
+          "The real problem was that people often do not know how to turn their experience into credible evidence of what they can do.",
+          "They can list responsibilities and projects, but struggle to communicate impact, identify differentiators, create strong career stories, or connect their experience to future opportunities. CareerFolio shifted from “build a portfolio” to “build career credibility.”",
+        ],
+      },
+      {
+        heading: "My Role",
+        blocks: [
+          "I conceived the product opportunity and owned:",
+          [
+            "product strategy",
+            "problem definition",
+            "PRD",
+            "high-level design",
+            "low-level design",
+            "execution planning",
+            "AI workflow design",
+            "rapid prototyping",
+            "MVP prioritization",
+            "UX iteration",
+          ],
+        ],
+      },
+      {
+        heading: "How I Approached It",
+        blocks: [
+          "The first important decision was to challenge the original solution.",
+          "Instead of asking:",
+          "“How do we build a better portfolio generator?”",
+          "I reframed the question:",
+          "“How do we help people prove what they can do using evidence they already have?”",
+          "That led to the Mirror · Map · Motion framework:",
+          "Mirror — What does my experience actually say about me?",
+          "Map — What roles and directions fit that evidence?",
+          "Motion — What should I do next to move toward those opportunities?",
+          "CareerFolio then uses an eight-agent AI pipeline, where specialized agents handle tasks such as resume parsing, brand analysis, career-story generation, portfolio creation, diagnostics, and personalized roadmaps. Together they transform one resume into connected career views grounded in the user's own evidence.",
+        ],
+      },
+      {
+        heading: "Key Product Decisions",
+        blocks: [[
+          "Pivot from a generic portfolio builder to an evidence-backed career intelligence product",
+          "Ground outputs in the user's existing experience rather than inventing accomplishments",
+          "Split complex career analysis across specialized AI agents",
+          "Organize output around Mirror, Map, and Motion rather than presenting a wall of AI-generated insights",
+          "Prioritize an MVP that delivered the core experience within a six-day hackathon timeline",
+          "Remove non-essential features such as authentication and persistence so the team could focus on product value",
+        ]],
+      },
+      {
+        heading: "Product Experience",
+        blocks: [
+          "From one resume, CareerFolio can generate:",
+          [
+            "evidence-backed portfolio content",
+            "strengths and differentiators",
+            "recruiter-ready resume bullets",
+            "STAR stories",
+            "elevator pitches",
+            "case studies",
+            "portfolio scoring",
+            "evidence-gap analysis",
+            "three role-matched career paths",
+            "personalized growth roadmaps",
+          ],
+        ],
+      },
+      {
+        heading: "The Biggest Product Pivot",
+        blocks: [
+          "One of the most important moments happened midway through development.",
+          "Our initial implementation generated a lot of useful analysis—but users were left asking:",
+          "“What am I supposed to do with all of this?”",
+          "That led to redesigning the experience around Mirror, Map, and Motion so that insight naturally progressed into direction and then action.",
+          "For me, this was a strong reminder that more AI output does not automatically mean more user value.",
+        ],
+      },
+      {
+        heading: "Constraints & Tradeoffs",
+        blocks: [
+          "The hackathon had a six-day delivery window, so scope discipline mattered.",
+          "We deliberately removed features such as authentication and persistent accounts to protect the core experience.",
+          "We were also using AI-assisted development tools with limited credits, so each iteration had a real cost. That forced us to prioritize high-impact product and UX changes instead of spending cycles on cosmetic improvements.",
+          "AI-generated structured outputs were not always reliable either. Documentation could omit requirements and structured responses occasionally failed, so we strengthened the process with detailed PRD, HLD, LLD, execution documents, and iterative prompt refinement.",
+        ],
+      },
+      {
+        heading: "Outcome / Impact",
+        blocks: [
+          "CareerFolio reduced a process that could otherwise involve hours of writing, coaching, and iteration into a roughly 90-second AI workflow that returns career diagnostics, role-matched paths, interview-ready assets, and growth recommendations grounded in the user's existing evidence.",
+          "The project won 1st place in the FWA AI Hackathon.",
+        ],
+      },
+      {
+        heading: "What I Learned",
+        blocks: [
+          "My biggest learning was that AI products need product architecture as much as technical architecture.",
+          "The model can generate enormous amounts of information very quickly. The PM's job is to determine:",
+          [
+            "which information actually helps the user",
+            "how outputs should be organized",
+            "what should be grounded in evidence",
+            "when to constrain the AI",
+            "how to convert insight into action",
+            "what not to build in the MVP",
+          ],
+          "CareerFolio started as an AI portfolio generator.",
+          "It became an AI career intelligence platform because we kept returning to the user's actual problem rather than staying attached to our first solution.",
+        ],
+      },
+      {
+        heading: "What’s Next",
+        blocks: [
+          "The future roadmap could extend CareerFolio into a persistent career workspace with:",
+          [
+            "role-specific resume and branding generation",
+            "AI mock interviews",
+            "multi-perspective hiring assessment",
+            "shareable portfolio generation",
+            "job matching and skills-gap analysis",
+            "personalized learning and career roadmaps",
+          ],
+        ],
+      },
+    ],
   },
   {
     slug: "pantry-to-plan",
