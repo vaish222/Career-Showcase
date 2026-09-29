@@ -1,7 +1,8 @@
 import { motion } from "framer-motion";
 import { SiGithub } from "react-icons/si";
-import { ArrowDown, Calendar, Clock, ArrowUpRight, Linkedin, Mail } from "lucide-react";
-import { personal, projects, shippedProjects, skills, experience, education, blogPosts } from "@/data/content";
+import { ArrowDown, Calendar, ArrowUpRight, Linkedin, Mail } from "lucide-react";
+import { personal, projects, shippedProjects, skills, experience, education } from "@/data/content";
+import { writingNotes } from "@/data/writing-notes";
 import { Navbar } from "@/components/navbar";
 import { useEffect, useState } from "react";
 import { Link } from "wouter";
@@ -52,7 +53,7 @@ function ProfilePhoto() {
 export default function Home() {
   useEffect(() => {
     const section = window.location.hash.slice(1);
-    if (section === "projects" || section === "shipped") {
+    if (section === "projects" || section === "shipped" || section === "blog") {
       requestAnimationFrame(() => document.getElementById(section)?.scrollIntoView());
     }
   }, []);
@@ -498,33 +499,39 @@ export default function Home() {
             </div>
 
             <div className="grid md:grid-cols-2 gap-6">
-              {blogPosts.map((post) => (
-                <motion.div 
-                  key={post.id} 
+              {writingNotes.map((post) => (
+                <motion.div
+                  key={post.slug}
                   variants={itemVariants}
-                  className="group flex flex-col justify-between p-8 rounded-2xl bg-card border border-card-border hover:border-primary/50 transition-all duration-300 relative h-full"
+                  className="h-full"
                 >
-                  <div>
-                    <div className="flex items-center gap-4 text-xs font-mono text-muted-foreground mb-4">
-                      <span className="flex items-center gap-1.5"><Clock size={12}/> {post.readTime}</span>
+                  <Link
+                    href={`/writing/${post.slug}`}
+                    className="group flex flex-col justify-between p-8 rounded-2xl bg-card border border-card-border hover:border-primary/50 transition-all duration-300 h-full focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-primary"
+                    aria-label={`Read note: ${post.title}`}
+                  >
+                    <div>
+                      <div className="text-xs font-mono text-muted-foreground uppercase tracking-wider mb-4">
+                        Product Note · {post.readTime}
+                      </div>
+                      <h4 className="text-xl font-bold mb-3 text-foreground">
+                        {post.title}
+                      </h4>
+                      <p className="text-muted-foreground text-sm leading-relaxed mb-6">
+                        {post.summary}
+                      </p>
                     </div>
-                    <h4 className="text-xl font-bold mb-3 text-foreground">
-                      {post.title}
-                    </h4>
-                    <p className="text-muted-foreground text-sm leading-relaxed mb-6">
-                      {post.excerpt}
-                    </p>
-                  </div>
-                  <div className="flex flex-wrap gap-2 pt-4 border-t border-border/30">
-                    {post.tags.map(tag => (
-                      <span key={tag} className="text-xs px-2 py-1 bg-muted/50 rounded-md text-muted-foreground">
-                        {tag}
-                      </span>
-                    ))}
-                  </div>
-                  {post.url && (
-                    <a href={post.url} className="absolute inset-0 z-10 rounded-2xl" target="_blank" rel="noreferrer" aria-label={`Read ${post.title}`} />
-                  )}
+                    <div>
+                      <div className="flex flex-wrap gap-2 pt-4 border-t border-border/30">
+                        {post.tags.map(tag => (
+                          <span key={tag} className="text-xs px-2 py-1 bg-muted/50 rounded-md text-muted-foreground">
+                            {tag}
+                          </span>
+                        ))}
+                      </div>
+                      <span className="inline-block mt-5 text-sm font-medium text-primary group-hover:underline">Read note →</span>
+                    </div>
+                  </Link>
                 </motion.div>
               ))}
             </div>

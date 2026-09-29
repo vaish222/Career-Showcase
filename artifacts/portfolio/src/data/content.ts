@@ -110,7 +110,6 @@ export const projects = [
     link: null,
   },
 ];
-
 export const shippedProjects = [
   {
     id: 12,
@@ -310,48 +309,5 @@ export const education = [
     degree: "Mastering Agentic AI: Certification by The Gen Academy· Google 5-Day AI Agents Intensive · AWS AI Practitioner Challenge",
     period: "",
     notes: "Also: Claude Code in Action · Introduction to MCP · Claude 101 · Machine Learning Specialization (DeepLearning.AI) · RAG with LangChain (DataCamp) · FWA AI launchpad",
-  },
-];
-
-export const blogPosts = [
-  {
-    id: 1,
-    title: "What 15 Years of Engineering Taught Me About Product",
-    excerpt:
-      "The patterns I kept seeing — where engineering and product diverge, and where they must align — shaped how I think about building the right things, not just building things right.",
-    date: "2024",
-    readTime: "6 min read",
-    tags: ["Career", "Product Management", "Engineering"],
-    url: null,
-  },
-  {
-    id: 2,
-    title: "From Code Reviews to Product Discovery: Skills That Transfer",
-    excerpt:
-      "Technical depth isn't a liability in product — it's a superpower. Here's how the skills I built as an engineer map directly onto the work I now do as a product leader.",
-    date: "2024",
-    readTime: "5 min read",
-    tags: ["Career Transition", "Product Management"],
-    url: null,
-  },
-  {
-    id: 3,
-    title: "Why Ambiguity Is a Product Feature, Not a Bug",
-    excerpt:
-      "The best discovery work doesn't eliminate ambiguity — it turns it into a shared understanding. A framework I use to bring structure to the messiest early-stage problems.",
-    date: "2024",
-    readTime: "5 min read",
-    tags: ["Product Discovery", "Frameworks"],
-    url: null,
-  },
-  {
-    id: 4,
-    title: "AI Agents in the Enterprise: What I Learned Building at a Hackathon",
-    excerpt:
-      "Winning the FWA AI Hackathon taught me as much about product thinking as it did about AI. What happens when you have to go from idea to working demo in 48 hours.",
-    date: "2024",
-    readTime: "7 min read",
-    tags: ["AI", "Product", "Hackathon"],
-    url: null,
   },
 ];
