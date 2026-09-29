@@ -4,9 +4,9 @@
 
 export const personal = {
   name: "Vaishali Goel",
-  title: "Senior Software Engineer | Technical Product Leader | AI Builder",
+  title: "Product Manager | Engineering & AI",
   tagline:
-    "15+ years building enterprise software, leading complex technical initiatives, and translating business needs into shipped solutions. Now bringing that depth to technical product leadership across AI, platforms, and enterprise systems.",
+    "15+ years turning complex business and technical problems into products that ship. I combine deep engineering experience with product discovery, strategy, technical architecture, and cross-functional execution across enterprise platforms and AI.",
   email: "vaishali221@gmail.com",
   github: "https://github.com/vaish222",
   linkedin: "https://www.linkedin.com/in/vaishaligoel221/",
@@ -15,86 +15,105 @@ export const personal = {
   location: "Cupertino, CA",
   availabilityTags: ["Open to Technical PM & AI Product roles"],
   stats: [
-    { value: "15+", label: "Years in Enterprise Technology" },
-    { value: "5", label: "Major Products & Platforms Shipped" },
-    { value: "1st place", label: "FWA AI Hackathon and The Gen Academy's - Mastering Agentic AI - Demo day winner" },
-    { value: "$70K", label: "Annual Savings Delivered" },
+    { value: "15+", label: "Years Across Engineering & Product" },
+    { value: "2× Winner", label: "FWA AI Hackathon + The Gen Academy Mastering Agentic AI - Demo Day" },
+    { value: "$1.5M", label: "Annual Savings from Print Transformation" },
   ],
-  bio: `I'm a Senior Software Engineer with 15+ years of experience building and modernizing enterprise applications across insurance and transportation.
-My work has increasingly expanded beyond engineering into product discovery, impact analysis, requirements, solution design, stakeholder alignment, and cross-functional delivery. I've often worked in the space between business intent and engineering execution — turning ambiguous problems into solutions teams can actually ship.
-Today, I'm focused on Technical Product Management and AI Product roles, where I can combine deep engineering fluency with product thinking, customer outcomes, and execution.
+  bio: `I’m a technical product leader with 15+ years across enterprise engineering and product delivery. My career started in software engineering, but my work has increasingly centered on product discovery, requirements, system design, stakeholder alignment, prioritization, and cross-functional execution.
+I’m often brought into problems where the business need is still ambiguous. I translate those problems into current/future-state workflows, product requirements, technical architecture, risks, tradeoffs, and implementation plans that engineering teams can execute.
+That combination of engineering depth and product thinking lets me move comfortably between users, business stakeholders, designers, engineers, vendors, and leadership—and still go deep into APIs, data, integrations, cloud, and AI when the problem requires it.
 
-What I bring: Technical depth · Product discovery · AI solution design · Cross-functional leadership · Enterprise delivery`,
+What I bring: Product discovery · Technical strategy · 0→1 execution · AI product design · Cross-functional leadership · Enterprise platforms`,
 };
 
 export const projects = [
   {
     id: 1,
-    title: "CareerFolio — AI Career Intelligence Platform",
+    title: "Enterprise Print Modernization",
     description:
-      "Conceived the product opportunity, created the strategy, PRD, high-level/low-level design, and execution plan for an AI-powered career intelligence platform. Built the working product through prompt-driven development and multi-agent AI experimentation — demonstrating hands-on product discovery, solution design, rapid prototyping, and iteration.",
+        "Led product and technical delivery for the transition of enterprise print operations to Fiserv, turning business pressures around declining print volume and fixed operating costs into requirements, solution design, vendor integrations, testing, and production rollout.",
     status: "Launched" as const,
-    tags: ["Product Strategy", "AI/LLM", "Multi-Agent", "PRD", "Prototyping"],
-    impact: "FWA AI Hackathon Winner — 1st place",
-    year: "2026",
-    link: "https://careerfolio-fwa.lovable.app/",
+    tags: ["Product Strategy", "Cross-functional Delivery", "Vendor Management", "Technical Solution"],
+    impact: "~$1.5M estimated annual savings",
+    link: null,
   },
   {
     id: 2,
-    title: "Enterprise Print Modernization",
+    title: "Centralized Work Intake",
     description:
-      "Led the modernization of a high-visibility enterprise print workflow, translating business and operational requirements into architecture, implementation, testing, vendor coordination, and production rollout.",
+        "Led discovery for a centralized enterprise intake process where user-submitted requests flowed through Workfront Fusion into JIRA epics and stories. Worked through initially ambiguous requirements with multiple business teams, aligned stakeholders on the MVP, mapped current/future-state workflows, documented field mappings and open questions, and produced developer-ready Visio and Confluence documentation.",
     status: "Launched" as const,
-    tags: ["Enterprise Platform", "Java", "Cross-functional Delivery", "Vendor Management"],
-    impact: "~$70K+ annual operational savings · Zero-incident rollout",
+    tags: ["Product Discovery", "MVP Definition", "Process Design"],
+    impact: "Workfront ecosystem supporting ~590 users and ~22K projects annually",
     link: null,
   },
   {
     id: 3,
-    title: "Cloud-Native Reporting Pipeline",
-    description:
-      "Designed and built serverless data pipelines using AWS Lambda, S3, Snowflake, and Tableau to automate enterprise reporting workflows that previously required significant manual effort across multiple teams.",
-    status: "Launched" as const,
-    tags: ["AWS Lambda", "Snowflake", "Tableau", "Data Engineering"],
-    impact: "70% reduction in manual reporting effort",
-    link: null,
-  },
-  {
-    id: 4,
-    title: "AI Project Mentor — Future World Alliance",
-    description:
-      "Mentoring teams building AI Launchpad, knowledge-bot, and automation-workflow projects. Guide solution design and engineering choices, establish JIRA and project execution structure, and help teams translate ideas into actionable delivery plans.",
-    status: "In Progress" as const,
-    tags: ["AI Agents", "Mentorship", "Product Leadership", "LLM"],
-    impact: "Multiple teams shipped working AI prototypes",
-    year: "2026",
-    link: null,
-  },
-  {
-    id: 5,
     title: "Legacy Platform Modernization",
     description:
-      "Architected and led modernization of a 20+ year legacy order printing fulfillment platform, eliminating 40K+ lines of DAO code through JPA migration. Spearheaded Java 11/17, Docker, GitHub, RHEL, and CI/CD adoption across the team.",
+        "Architected and led modernization of a 20+ year legacy order printing fulfillment platform, eliminating 40K+ lines of DAO code through JPA migration. Spearheaded Java 11/17, Docker, GitHub, RHEL, and CI/CD adoption across the team.",
     status: "Launched" as const,
     tags: ["Java", "JPA", "Docker", "CI/CD", "Platform Migration"],
     impact: "Reduced application deployment time by over 90%, from 1–2 hours to under 5 minutes.",
     link: null,
   },
   {
-    id: 6,
+    id: 4,
     title: "State-Filing Compliance Experience",
     description:
-      "Gathered user needs, created UI mockups, defined API and data requirements, implemented filters and rule visibility, and coordinated customer acceptance testing and release readiness for a regulatory compliance workflow.",
+        "Designed and delivered a centralized compliance experience that replaced a fragmented spreadsheet and automation workflow with a searchable, permissioned, auditable interface. Defined requirements and mockups, integrated PerformLine API data through Workfront Fusion, and introduced filtering and clearer rule terminology for users.",
     status: "Launched" as const,
-    tags: ["Product Discovery", "UX Mockups", "Compliance", "API Design"],
-    impact: "Streamlined state-filing process across multiple markets",
+    tags: ["Product Discovery", "UX", "Compliance", "API Design"],
+    impact: "Simplified regulatory-rule review and improved visibility and auditability",
+    link: null,
+  },
+  {
+    id: 5,
+    title: "Warehouse Application Portfolio Strategy",
+    description:
+      "Helped shape the roadmap for ~10 warehouse applications by evaluating which systems should be retired, maintained, or modernized. Combined technical condition, supportability, business needs, and future-state considerations to guide portfolio priorities.",
+    status: "In Progress" as const,
+    tags: ["Product Strategy", "Roadmapping", "Portfolio Management", "Modernization"],
+    impact: "~$178,000 estimated annual savings",
+    year: "2026",
+    link: null,
+  },
+  {
+    id: 6,
+    title: "Cloud-Native Reporting Pipeline",
+    description:
+        "Designed and built serverless data pipelines using AWS Lambda, S3, Snowflake, and Tableau to automate enterprise reporting workflows that previously required significant manual effort across multiple teams.",
+    status: "Launched" as const,
+    tags: ["AWS Lambda", "Snowflake", "Tableau", "Data Engineering"],
+    impact: "70% reduction in manual reporting effort",
+    link: null,
+  },
+  {
+    id: 7,
+    title: "Technical Architecture & Integration",
+    description:
+      "Translated upstream customer-review data into implementation-ready technical requirements, defining the database and MuleSoft API integration needed for engineering delivery.",
+    status: "Launched" as const,
+    tags: ["Product discovery", "Database design", "API documentation"],
+    impact: "Reduced ambiguity between business requirements and engineering implementation",
+    link: null,
+  },
+  {
+    id: 8,
+    title: "AI Project Mentor — Future World Alliance",
+    description:
+        "Mentoring teams building AI Launchpad, knowledge-bot, and automation-workflow projects. Guide solution design and engineering choices, establish JIRA and project execution structure, and help teams translate ideas into actionable delivery plans.",
+    status: "In Progress" as const,
+    tags: ["AI Agents", "Mentorship", "Product Leadership", "LLM", "RAG", "Product and UX designing"],
+    impact: "Multiple teams shipped working AI prototypes",
+    year: "2026",
     link: null,
   },
 ];
 
 export const shippedProjects = [
   {
-    id: 10,
+    id: 12,
     title: "Pantry to Plan",
     description:
         "Turn a pantry photo into a 3 to 5 day dinner plan and a consolidated shopping list. The application combines image-based ingredient detection, a human review step, preference-aware recipe planning, pantry depletion, and shopping-list aggregation in one Streamlit workflow.",
@@ -122,7 +141,25 @@ export const shippedProjects = [
     ],
   },
   {
-    id: 7,
+    id: 9,
+    title: "CareerFolio — AI Career Intelligence Platform",
+    description:
+        "Conceived the product opportunity, created the strategy, PRD, high-level/low-level design, and execution plan for an AI-powered career intelligence platform. Built the working product through prompt-driven development and multi-agent AI experimentation — demonstrating hands-on product discovery, solution design, rapid prototyping, and iteration.",
+    status: "Launched" as const,
+    tags: ["Product Strategy", "AI/LLM", "Multi-Agent", "PRD", "Prototyping"],
+    impact: "FWA AI Hackathon Winner — 1st place",
+    year: "2026",
+    link: "https://careerfolio-fwa.lovable.app/",
+    eyebrow: "0→1 product",
+    ownership: [
+      "Idea to product generation",
+      "Product strategy & PRD",
+      "System design (HLD + LLD)",
+      "Execution & delivery",
+    ],
+  },
+  {
+    id: 10,
     title: "AI Product Decision Assistant",
     description:
       "Built a transparent decision-support product that helps teams define a decision, capture project and enterprise context, generate evaluation criteria, compare options, and reach a recommendation. The experience clearly separates user facts, AI inferences, validated ratings, and deterministic weighted calculations.",
@@ -140,7 +177,7 @@ export const shippedProjects = [
     ],
   },
   {
-    id: 8,
+    id: 11,
     title: "I Got This — What's Next?",
     description:
       "Built a RAG assistant that grounds answers in family source documents and evaluates whether retrieved evidence is strong enough to answer, rather than generating unsupported responses.",
@@ -158,7 +195,7 @@ export const shippedProjects = [
     ],
   },
   {
-    id: 9,
+    id: 12,
     title: "StayOps AI",
     description:
       "Designed an AI operations manager that prioritizes work across eight properties while explicitly separating recommendations from consequential actions requiring human approval.",
