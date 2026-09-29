@@ -464,11 +464,11 @@ export default function Home() {
             <div className="mb-12">
               <h2 className="text-sm font-mono text-primary uppercase tracking-wider mb-3">06. Writing</h2>
               <h3 className="text-4xl md:text-5xl font-bold mb-4">
-                How I think when{" "}
-                <span className="text-primary">nobody asks.</span>
+                How I Think About {" "}
+                <span className="text-primary">Products.</span>
               </h3>
               <p className="text-lg text-muted-foreground font-light max-w-2xl">
-                Product thinking, engineering lessons, and perspective on the space between code and customer — documented unprompted.
+                Product thinking, engineering lessons, and perspectives from the space between user problems and technical execution.
               </p>
             </div>
 
@@ -518,7 +518,7 @@ export default function Home() {
             <h2 className="text-sm font-mono text-primary uppercase tracking-wider mb-4">07. Contact</h2>
             <h3 className="text-4xl md:text-5xl font-bold mb-6">Let's Talk</h3>
             <p className="text-lg text-muted-foreground mb-10 font-light">
-              Open to PM opportunities — reach out. Whether you have a question or just want to say hi, I'll try my best to get back to you!
+              Open to Product Management and AI Product opportunities where deep technical understanding, product discovery, and cross-functional execution matter.
             </p>
             
             <a 

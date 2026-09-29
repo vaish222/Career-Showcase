@@ -206,23 +206,10 @@ export const shippedProjects = [
 ];
 
 export const skills = {
-  engineering: [
-    "Java / Spring Boot",
-    "Python",
-    "SQL",
-    "JavaScript / Vue.js",
-    "REST APIs",
-    "MuleSoft",
-    "AWS Lambda & S3",
-    "Docker & CI/CD",
-    "Oracle / SQL Server / Snowflake",
-    "Distributed Systems & MQ",
-    "JPA / Hibernate",
-    "Selenium / JUnit",
-  ],
   product: [
     "Product Discovery",
-    "Requirements & Impact Analysis",
+    "Requirements, PRDs & Impact Analysis",
+    "MVP definition",
     "Current / Future State Mapping",
     "User Stories & JIRA Delivery",
     "Stakeholder Alignment",
@@ -230,7 +217,7 @@ export const skills = {
     "UAT & Release Readiness",
     "Risk & Dependency Analysis",
     "Prototyping & Mockups",
-    "Product Analytics & Reporting",
+    "Product Metrics & Evaluation",
     "Agile / Scrum",
     "Prioritization"
   ],
@@ -245,14 +232,29 @@ export const skills = {
     "Evals",
     "Fine-tuning"
   ],
+  engineering: [
+    "Java / Spring Boot",
+    "Python",
+    "SQL",
+    "JavaScript / Vue.js",
+    "REST APIs",
+    "MuleSoft",
+    "AWS Lambda & S3",
+    "Kubernetes & CI/CD",
+    "Oracle / SQL Server / Snowflake",
+    "Distributed Systems & MQ",
+    "JPA / Hibernate",
+    "Selenium / JUnit",
+    "Data Pipeline"
+  ],
   delivery: [
     "GitHub/Bitbucket",
     "JIRA",
     "CI/CD",
     "Jenkins",
-    "Docker",
-    "Tableau",
-    "Snowflake"
+    "Kubernetes",
+    "Visio",
+    "Confluence"
   ],
 };
 
@@ -260,24 +262,24 @@ export const experience = [
   {
     id: 1,
     company: "Mutual of Omaha",
-    role: "Engineer II — Product & Engineering",
-    period: "Feb 2019 – Present",
+    role: "Technical Lead — Product & Engineering",
+    period: "2019 – Present",
     description:
-      "Current scope spans business analysis, product discovery, engineering delivery, testing, and production support across enterprise Insurance applications.",
+      "Current scope spans technical product discovery, engineering delivery, enterprise integrations, modernization, and production ownership.",
     highlights: [
-      "Led discovery and impact analysis, translating ambiguous business requests into requirements, current/future-state flows, risks, mockups, JIRA stories, and implementation plans",
-      "Owned architecture, implementation, and delivery of enterprise print modernization — $70K annual savings, zero-incident rollout",
-      "Designed cloud-native AWS Lambda/Snowflake/Tableau pipelines, reducing manual reporting effort by 70%",
-      "Architected Selenium/Jenkins automation, reducing manual validation by 80% and post-production defects by 40%",
-      "Led platform modernization to Java 11/17, Docker, GitHub, RHEL, and CI/CD — zero critical downtime",
-      "Optimized distributed integrations (REST APIs, MuleSoft, MQ), improving response times by 35%",
+      "Led product and technical delivery for an enterprise print-operations transformation to Fiserv, supporting an initiative delivering ~$1.5M in annual savings.",
+      "Led discovery and MVP definition for centralized work intake across a Workfront ecosystem supporting ~590 users and ~22K projects annually, mapping Workfront/Fusion/JIRA workflows and delivering implementation-ready requirements.",
+      "Designed and delivered a State Filing compliance experience, transforming a fragmented spreadsheet/Fusion workflow into a searchable, permissioned, auditable product.",
+      "Helped shape lifecycle strategy across ~10 warehouse applications, evaluating systems for retirement, maintenance, or modernization.",
+      "Defined technical architecture and implementation requirements for API/data integrations spanning MuleSoft, enterprise databases, Workfront, and downstream systems.",
+      "Maintained hands-on technical depth across Java/Spring Boot, APIs, SQL, automation, distributed systems, and production troubleshooting.",
     ],
   },
   {
     id: 2,
     company: "Tech Mahindra (formerly Mahindra Satyam)",
     role: "Technical Team Lead / Onsite Coordinator",
-    period: "Jan 2008 – Feb 2016",
+    period: "2008 – 2016",
     description:
       "Led globally distributed engineering teams delivering enterprise workforce-management capabilities supporting Union Pacific Railroad operations across 23 states.",
     highlights: [
