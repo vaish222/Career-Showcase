@@ -72,7 +72,7 @@ export const projects = [
     title: "Warehouse Application Portfolio Strategy",
     description:
       "Helped shape the roadmap for ~10 warehouse applications by evaluating which systems should be retired, maintained, or modernized. Combined technical condition, supportability, business needs, and future-state considerations to guide portfolio priorities.",
-    status: "In Progress" as const,
+    status: "Launched" as const,
     tags: ["Product Strategy", "Roadmapping", "Portfolio Management", "Modernization"],
     impact: "~$178,000 estimated annual savings",
     year: "2026",
