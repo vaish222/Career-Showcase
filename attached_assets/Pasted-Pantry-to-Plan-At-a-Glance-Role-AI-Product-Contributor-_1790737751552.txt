@@ -1,0 +1,125 @@
+Pantry to Plan
+At a Glance
+Role: AI Product Contributor
+Type: 0→1 AI Product
+Impact: The Gen Academy Mastering Agentic AI Demo Day — 1st Place
+My Focus: UX Enhancement · Visual Experience · Human-in-the-Loop Design · Documentation · Golden Dataset · AI Evaluation
+The Problem
+Pantry to Plan was designed to turn a pantry photo into a 3–5 day dinner plan and a consolidated shopping list. The product combines image-based ingredient detection, user preferences, recipe retrieval, pantry depletion, and shopping-list aggregation in one workflow.    README (1)
+A key challenge was making the experience both trustworthy and enjoyable to use. AI-generated pantry detections could be incomplete or inaccurate, so users needed a clear way to review and correct what the system detected before meal planning began.
+The experience also needed to feel more visual and intuitive. A meal-planning product is easier to understand when users can see what they are working with and what the final meal looks like, rather than interacting with text alone.
+Finally, the team needed a repeatable way to evaluate whether the vision model was correctly identifying ingredients from uploaded pantry images and whether the downstream planner respected its constraints.
+My Role
+My ownership focused on improving the user experience, visual design, documentation, and evaluation quality of the product.
+I worked on:
+- UX enhancements and user-flow refinement
+- Adding visual assets to improve the overall look and feel
+- Adding recipe images to generated meal-plan results
+- Presenting recipe ingredients and cooking instructions alongside each recipe
+- Human-in-the-loop pantry confirmation experience
+- README and developer run documentation
+- Creating image-based golden datasets in JSON
+- Running evals and validating vision and planning results
+How I Approached It
+I approached the project from three perspectives:
+Make the experience easier to use.
+Make the output more engaging and understandable.
+Make the AI behavior measurable.
+For the UX, I helped improve the flow so users could review and correct pantry items before the planner used them. The confirmation step exposes detected ingredients, confidence, mapping status, and quantities, while low-confidence or incomplete detections are surfaced for additional review.    README (1)
+This created an explicit human checkpoint between AI perception and downstream planning rather than assuming that image recognition would always be correct.
+Improving the Visual Experience
+I also enhanced the UI by adding imagery throughout the application to make the experience more polished, inviting, and easier to understand.
+For the generated meal plan, I added recipe images alongside the recipe name, ingredients, and cooking instructions. The application already supports recipe cards with matching images and expandable ingredient and cooking details.    README (1)
+This was an important product decision because food is inherently visual. A user can understand and evaluate a meal much faster when they can see the finished dish rather than reading a recipe title alone.
+Images also help:
+- make the generated plan feel more tangible
+- help users quickly scan meals
+- create stronger visual hierarchy
+- make ingredients and instructions easier to associate with the final outcome
+- improve the overall perceived quality of the product
+It reinforced something I strongly believe about UX: visuals are not just decoration; when used intentionally, they reduce cognitive effort and help users understand a product faster.
+Documentation & Developer Experience
+I updated the README so someone new to the project could understand the product flow, architecture, setup requirements, and how to run the application locally.
+The documentation includes:
+- environment setup
+- dependency installation
+- Streamlit launch instructions
+- retrieval configuration
+- AI and local fallback behavior
+- application architecture
+- evaluation instructions
+The README documents the full four-step experience and the supporting application structure.    README (1)
+I considered documentation part of the product quality because a working application is much less useful if another developer cannot easily understand, reproduce, or evaluate it.
+Creating the Golden Dataset
+One of my key contributions was creating a golden dataset specifically for evaluating pantry-image recognition.
+I created expected results in JSON for representative pantry images. Each image had a known set of ingredients that should be identifiable.
+This gave us a clear comparison:
+Uploaded pantry image → AI-detected ingredients → Expected ingredients from golden JSON
+Instead of manually looking at an image and deciding whether the result “seemed correct,” we could compare the model output against an expected ground truth.
+The goal was to answer questions such as:
+- Did the model identify the ingredients actually visible in the image?
+- Which expected ingredients were missed?
+- Did the model introduce ingredients that were not present?
+- Were ingredient names normalized correctly?
+- Which detections had low confidence and required human review?
+This complemented the broader evaluation suite, which also includes vision-noise and poorly labeled pantry scenarios.    README (1)
+Key Product Decisions
+- Require users to review AI-detected pantry items before meal planning
+- Surface low-confidence detections instead of hiding uncertainty
+- Use images to improve comprehension and engagement throughout the product
+- Show recipe imagery together with ingredients and cooking instructions
+- Make the application easy for another developer to set up and run
+- Create image-specific JSON ground truth for repeatable vision evaluation
+- Evaluate vision recognition separately from downstream planning correctness
+- Use golden datasets and repeatable evals rather than relying only on manual testing
+Technical / System Context
+The application combines:
+- GPT-4o for pantry-image understanding
+- Pinecone + OpenAI embeddings for recipe retrieval
+- TF-IDF as a local retrieval fallback
+- Python for scoring, constraints, inventory depletion, and shopping-list calculations
+- Streamlit for the user experience
+- Pydantic for structured data contracts
+- LangSmith for evaluation workflows
+- JSON-based fixtures and golden datasets for repeatable testing    README (1)
+The user journey is:
+Upload Pantry Photo → Review & Correct Ingredients → Set Preferences → Generate Visual Meal Plan → Review Recipes → Get Shopping List
+Evaluation & Quality
+I worked on evaluation at two different levels.
+1. Vision evaluation
+For pantry-image parsing, I created JSON-based expected outputs for test images and compared those expected ingredients with the ingredients produced by the vision pipeline.
+This allowed us to evaluate ingredient identification systematically rather than relying on visual inspection alone.
+2. Planning evaluation
+The broader golden evaluation suite validates behaviors such as:
+- vegetarian constraints are never violated
+- calorie calculations are correct
+- pantry inventory never goes negative
+- shopping lists contain only actual shortages
+- incomplete plans only occur when hard constraints prevent completion
+- invalid schema values are rejected    README (1)
+The project also uses a LangSmith evaluation harness so individual test cases can be executed and traced consistently.    README (1)
+Outcome / Impact
+The final product delivered more than an AI-generated meal plan.
+It provided a visual, human-reviewed, and measurable end-to-end experience:
+Pantry image → AI detection → Human confirmation → Preference-aware planning → Visual recipes → Ingredients & instructions → Consolidated shopping list
+The project won 1st place at The Gen Academy Mastering Agentic AI Demo Day.
+My contributions helped make the product:
+- easier and more enjoyable to use
+- more visually polished
+- easier for developers to understand and reproduce
+- more transparent when AI was uncertain
+- more objectively measurable through golden datasets and evals
+What I Learned
+This project reinforced three important lessons for me about AI products.
+First, UX matters as much as model capability.
+Even a technically strong AI workflow can feel difficult to use if information is not presented clearly. Adding visual assets and recipe imagery made the experience easier to scan, understand, and engage with.
+Second, humans need visibility into AI uncertainty.
+Instead of silently accepting image detections, giving users the ability to review and correct them created a more trustworthy workflow.
+Third, AI quality needs ground truth.
+Creating expected ingredient sets for pantry images in JSON changed evaluation from:
+“This looks approximately right.”
+to:
+“These are the ingredients we expected. What did the model correctly identify, miss, or incorrectly add?”
+That reinforced one of my biggest lessons from building AI products:
+AI quality should be defined before it is measured.
+Once expected behavior, ground truth, and hard constraints are explicit, teams can make product improvements based on evidence rather than intuition.
