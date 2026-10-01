@@ -1,6 +1,7 @@
 import { projects, shippedProjects } from "./content";
 import { stayOpsCaseStudy } from "./stayops-case-study";
 import { decisionAssistantCaseStudy } from "./decision-assistant-case-study";
+import { iGotThisCaseStudy } from "./i-got-this-case-study";
 
 export type CaseStudy = {
   slug: string;
@@ -35,6 +36,7 @@ const career = shippedProjects[1];
 export const caseStudies: CaseStudy[] = [
   stayOpsCaseStudy,
   decisionAssistantCaseStudy,
+  iGotThisCaseStudy,
   {
     slug: "enterprise-print-modernization",
     title: print.title,

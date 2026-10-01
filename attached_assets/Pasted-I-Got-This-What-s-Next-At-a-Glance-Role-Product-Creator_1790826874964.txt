@@ -1,0 +1,146 @@
+I Got This — What’s Next?
+At a Glance
+Role: Product Creator / Technical Product Lead / AI Engineer
+Type: 0→1 Family Knowledge Assistant
+Ownership: End-to-End — Product Strategy → RAG Architecture → UX → Privacy → Evaluation
+Primary User: Busy households managing schedules, deadlines, meals, invitations, learning, volunteering, and family logistics
+Tech: Python · Streamlit · Ollama · Pinecone · RAG · Local Embeddings · Evaluation Harness
+The Problem
+Family information is often scattered across calendars, invitations, school notes, meal plans, volunteer commitments, and household tasks.
+The problem is not always that the information is missing. It is that people have to remember where it lives, what matters now, and what needs action.
+I built I Got This — What’s Next? as a conversational family knowledge assistant that can answer everyday questions such as:
+- What’s coming up this week?
+- What should I prepare for this weekend?
+- Which invitations still need an RSVP?
+- What is the meal plan for Sunday?
+- Is there any other volunteer work?
+The goal was to reduce mental load by turning scattered family information into one grounded, conversational experience.
+My Role
+I built the project independently and owned:
+- problem definition and product strategy
+- conversational UX
+- RAG architecture
+- knowledge-domain design
+- privacy decisions
+- retrieval and answer-routing logic
+- clarification and safe-refusal behavior
+- evaluation framework
+- model experiments
+- latency and quality measurement
+- test coverage and documentation
+How It Works
+The product uses a grounded RAG workflow:
+User Question → Intent / Domain Handling → Retrieval → Context Filtering → Answer Generation → Source Attribution
+The assistant retrieves relevant knowledge from configured family documents, generates an answer grounded in that context, keeps dates and deadlines prominent, and shows supporting sources.
+For higher-confidence domains such as:
+- meal plans
+- invitations
+- activities
+- school
+- learning
+- volunteer work
+the system can run a metadata-scoped re-query so the final answer is based on a more focused context set.
+Key Product Decisions
+1. Ground answers in family data, not model memory
+The assistant is designed to answer from the configured knowledge base rather than inventing missing details.
+2. Ask for clarification when the question is too broad
+If a request cannot be answered reliably from the available context, the product asks the user to narrow the question or safely refuses.
+3. Keep source attribution visible
+Supported answers show the documents behind the response so users can understand where the information came from.
+4. Keep short-term memory temporary
+Conversation memory exists only in the active Streamlit session. Starting a new conversation or ending the session clears it.
+5. Make privacy an explicit product decision
+Answer generation runs locally through Ollama by default, while Pinecone is used for hosted retrieval. The product makes that boundary clear before users point the system at personal documents.
+UX Approach
+I designed the experience around everyday household questions rather than exposing RAG mechanics.
+The app includes:
+- personalized Ask experience
+- suggested questions
+- short-term conversational memory
+- plain-language responses
+- one compact card per day for schedules
+- category and status chips
+- source attribution
+- safe clarification and insufficient-information states
+- a read-only Experiments tab for quality and latency results
+The goal was to make the system feel like a practical household assistant, not a technical search tool.
+Technical / System Context
+The application uses:
+- Ollama for local embeddings and default answer generation
+- Pinecone for vector retrieval
+- Streamlit for the application experience
+- Python for retrieval, routing, conversation handling, and evaluation
+- configurable RAG generation modes
+- metadata-scoped retrieval for selected domains
+- synthetic reproducible sample data
+- offline tests and regression checks
+The knowledge base spans school, activities, household tasks, meals, personal learning, volunteering, social invitations, and family schedules.
+Evaluation Strategy
+I treated evaluation as a core part of the product.
+The current measurement tracks:
+- Recall@5
+- Strict faithfulness
+- Correct refusal rate
+- Average latency
+- P95 latency
+- corrected-behavior checks
+The latest saved measurement showed:
+- Recall@5: 0.900
+- Correct refusal rate: 1.000
+- Average latency: 1.536s
+- P95 latency: 4.252s
+- Corrected-behavior checks: 7/9
+I also built experiments to compare generation approaches while keeping retrieval fixed, including:
+- model comparisons
+- concise vs. strict generation
+- relevance-first generation
+- claim-level faithfulness audits
+- refusal behavior
+- output length
+- latency
+This made it possible to evaluate product tradeoffs rather than choose a model based on one metric alone.
+Product Tradeoffs
+Privacy vs. retrieval quality
+Generation runs locally by default, while Pinecone provides hosted retrieval. This gives strong local control over generation while still benefiting from vector search, but it also means users need to understand what data leaves their machine.
+Recall vs. precision
+Broad retrieval improves recall, but too much context can reduce answer quality. Scoped re-querying helps narrow the context for high-confidence domains.
+Helpful answers vs. safe refusal
+The system is designed to refuse or clarify when evidence is insufficient rather than produce a confident but unsupported answer.
+Memory vs. privacy
+Conversation history improves continuity, but I chose session-only memory instead of long-term persistence.
+Outcome / Impact
+The project demonstrates a privacy-conscious way to bring multiple areas of family life into one conversational interface.
+It turns:
+scattered schedules, invitations, meals, commitments, and tasks
+into:
+grounded answers, prioritized dates, source-backed context, and safer decision support
+without requiring permanent conversational memory.
+What I Learned
+The biggest lesson was that a useful RAG product depends on much more than retrieval.
+A strong experience requires:
+- good source organization
+- thoughtful domain routing
+- clear grounding
+- safe refusal behavior
+- privacy boundaries
+- source transparency
+- measurable evaluation
+I also learned that quality is multi-dimensional. Higher recall does not automatically mean better answers, and a faster model is not necessarily more useful if it produces unsupported claims.
+The product became stronger when I evaluated faithfulness, refusal quality, relevance, and latency separately instead of compressing them into one score.
+Key Product Principle
+Be helpful when the evidence is strong. Be transparent when it isn’t.
+Portfolio Card Version
+I Got This — What’s Next?
+A privacy-conscious family knowledge assistant that connects schedules, deadlines, meals, invitations, learning, volunteer work, and household tasks in one grounded conversational experience.
+WHAT I OWNED
+- Product strategy & UX
+- RAG architecture
+- Knowledge-domain design
+- Privacy boundaries
+- Retrieval & scoped re-query logic
+- Safe clarification / refusal behavior
+- Evaluation framework
+- Model & latency experiments
+- Testing & documentation
+KEY PRODUCT PRINCIPLE
+Be helpful when the evidence is strong. Be transparent when it isn’t.
