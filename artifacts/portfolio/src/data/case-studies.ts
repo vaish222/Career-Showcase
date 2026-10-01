@@ -1,4 +1,5 @@
 import { projects, shippedProjects } from "./content";
+import { stayOpsCaseStudy } from "./stayops-case-study";
 
 export type CaseStudy = {
   slug: string;
@@ -15,6 +16,7 @@ export type CaseStudy = {
   tags: string[];
   section: "projects" | "shipped";
   externalLink?: string;
+  preserveCardDescription?: boolean;
   detailSections?: { heading: string; blocks: (string | string[])[] }[];
 };
 
@@ -30,6 +32,7 @@ const pantry = shippedProjects[0];
 const career = shippedProjects[1];
 
 export const caseStudies: CaseStudy[] = [
+  stayOpsCaseStudy,
   {
     slug: "enterprise-print-modernization",
     title: print.title,

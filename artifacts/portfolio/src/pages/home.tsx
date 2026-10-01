@@ -286,7 +286,7 @@ export default function Home() {
                     <h4 className="text-2xl md:text-3xl font-bold text-foreground mb-4">
                       {project.title}
                     </h4>
-                    {caseStudyByTitle.has(project.title) ? (
+                    {caseStudyByTitle.has(project.title) && !caseStudyByTitle.get(project.title)!.preserveCardDescription ? (
                       <p className="text-muted-foreground text-lg leading-relaxed mb-8">{caseStudyByTitle.get(project.title)!.overview}</p>
                     ) : (
                       <ExpandableDescription description={project.description} preview={shippedPreviews[project.id]} details={project.ownership} className="text-lg mb-8" />
