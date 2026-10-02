@@ -120,7 +120,7 @@ export const shippedProjects = [
     tags: ["Product Decisions", "Vision Parsing", "StreamLit", "Persistence", "LangSmith", "HITL"],
     impact: "The Gen Academy Demo day Winner - 1st Place",
     year: "2026",
-    link: "https://github.com/ericsu13/pantry-to-plan",
+    link: "https://pantry-to-plan-my-repo-rhkyqbttvn7lrunakbnxjq.streamlit.app/",
     eyebrow: "0→1 product",
     ownership: [
       "Image-based ingredient detection",
