@@ -100,7 +100,7 @@ export const projects = [
   },
   {
     id: 8,
-    title: "AI Project Mentor — Future World Alliance",
+    title: "Project Mentor - Future World Alliance",
     description:
         "Mentoring teams building AI Launchpad, knowledge-bot, and automation-workflow projects. Guide solution design and engineering choices, establish JIRA and project execution structure, and help teams translate ideas into actionable delivery plans.",
     status: "In Progress" as const,
