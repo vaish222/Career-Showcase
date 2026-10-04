@@ -1,0 +1,60 @@
+## The Problem
+
+Volunteer teams were building AI products including a knowledge bot, enrollment automation, and AI workflow systems. Team members had different levels of AI and software-development experience, while launch dates were fixed.
+
+The teams needed more structure around **product definition, technical decisions, ownership, risk management, and delivery**.
+
+## My Role
+
+Served as a **Technical Mentor, Product/Project Lead, and Engineering Advisor**, helping teams move from product requirements and early ideas toward reliable, launch-ready AI systems.
+
+I supported teams across product discovery, architecture, execution planning, staffing, technical tradeoffs, and delivery.
+
+## How I Approached It
+
+I started with the user problem and business requirements before choosing technology, then helped teams translate those requirements into executable plans.
+
+Key contributions included:
+
+- Converted two PRDs into **27 epics and 124 Jira stories** with acceptance criteria, dependencies, owners, and milestones.
+- Planned work backward from launch deadlines, prioritizing launch-critical functionality first.
+- Identified architecture, security, timeline, and vendor risks early and converted them into investigation tasks.
+- Created architecture, process-flow, and delivery diagrams to align engineering, mentors, and operations.
+- Advised on staffing, placing experienced engineers on critical AI and reliability work while creating growth opportunities for newer volunteers.
+- Reviewed technical approaches and coached engineers through implementation tradeoffs and blockers.
+
+## Key Product & Technical Decisions
+
+- **Start with the problem, not the AI technology** — define the user need before selecting the model or architecture.
+- **Reuse before rebuilding** — an early audit showed approximately **85–90% of the existing knowledge bot could be reused**.
+- **Define the MVP around the deadline** — launch-critical enrollment functionality was prioritized first, while nonessential work moved to later milestones.
+- **Measure, don’t just demo** — introduced a **150+ question evaluation set** with targets for groundedness, citation accuracy, and zero incorrect prices or dates.
+- **Keep critical facts deterministic** — prices, dates, and policy-driven information come from structured sources rather than model inference.
+- **Keep humans in control where judgment matters** — decisions such as scholarships and access removal remain human-controlled.
+- **Design for failure** — events are persisted before processing, retries are idempotent, automated emails can be stopped quickly, and launch-day processing is rehearsed in advance.
+
+## Technical / System Context
+
+**AI & Product:** RAG, LLM evaluation, AI agents, prompt engineering, product discovery, architecture design
+
+**Engineering:** Python, FastAPI, Supabase, PostgreSQL, Edge Functions, queues, webhooks, React
+
+**Delivery:** Jira, sprint planning, dependency management, technical mentoring, AI-assisted development
+
+## Outcome / Impact
+
+Helped multiple teams move from requirements and early prototypes toward structured, launch-ready AI systems.
+
+The work introduced clearer ownership, stronger delivery planning, measurable AI quality gates, and safer boundaries between **AI reasoning, deterministic logic, and human judgment**.
+
+The current launch is scheduled for **November 15, 2026**, with post-launch metrics including enrollment processing performance, duplicate rate, email accuracy, groundedness, and citation quality.
+
+## What I Learned
+
+AI projects can become technology-led very quickly.
+
+The most valuable questions are often not *“Which model should we use?”* but:
+
+**What should remain deterministic? Where should a human decide? What happens when the system fails? And how will we know it works before users discover that it doesn’t?**
+
+This project reinforced that strong AI products require product thinking, evaluation, operational reliability, and disciplined delivery—not just a capable model.
