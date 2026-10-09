@@ -1,0 +1,1 @@
+- [Transitive update safety](transitive-update-safety.md) — verify the resolved tree and lockfile diff; targeted pnpm updates can leave the intended dependency unchanged.
