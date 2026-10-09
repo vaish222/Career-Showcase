@@ -535,6 +535,26 @@ export default function Home() {
                 </motion.div>
               ))}
             </div>
+
+            <div className="mt-8 flex flex-col md:flex-row md:items-center md:justify-between gap-6 p-8 rounded-2xl bg-card border border-card-border">
+              <div>
+                <h4 className="text-xl font-bold mb-3 text-foreground">
+                  Technical Concepts, Made Simple
+                </h4>
+                <p className="text-muted-foreground text-sm leading-relaxed">
+                  I explain technical concepts in plain language, without assuming a technical background.
+                </p>
+              </div>
+              <a
+                href="https://substack.com/@tinytechtales"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Read on Substack (opens in a new tab)"
+                className="inline-flex items-center gap-2 self-start md:self-auto shrink-0 text-sm font-medium text-primary hover:underline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-primary"
+              >
+                Read on Substack <ArrowUpRight size={16} aria-hidden="true" />
+              </a>
+            </div>
           </motion.div>
         </section>
 
